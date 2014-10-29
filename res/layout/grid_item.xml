@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+	<ImageView 
+	    android:id="@+id/grid_item_icon"
+	    android:layout_height="140dp"
+	    android:layout_width="155dp"
+	    android:layout_centerHorizontal="true"
+	    android:layout_marginTop="30dp"/>
+	
+	<TextView 
+	    android:id="@+id/grid_item_label"
+	    android:layout_height="0dp"
+	    android:layout_width="0dp"
+	    android:layout_below="@id/grid_item_icon"
+	    android:layout_centerHorizontal="true"/>
+</RelativeLayout>

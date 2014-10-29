@@ -1,0 +1,26 @@
+[
+  {
+    "description": "支付宝是全球领先的第三方支付平台，成立于2004年12月，致力于为用户提供\u201c简单、安全、快速\u201d的支付解决方案。旗下有\u201c支付宝\u201d与\u201c支付宝钱包\u201d两个独立品牌。自2014年第二季度开始成为当前全球最大的移动支付厂商。",
+    "id": 1,
+    "image": "https://www.alipay.com",
+    "name": "支付宝",
+    "url": "https://www.alipay.com",
+    "user_id": 1
+  },
+  {
+    "description": "百度是全球最大的中文搜索引擎，2000年1月由李彦宏、徐勇两人创立于北京中关村，致力于向人们提供\u201c简单，可依赖\u201d的信息获取方式。\u201c百度\u201d二字源于中国宋朝词人辛弃疾的《青玉案·元夕》词句\u201c众里寻他千百度\u201d，象征着百度对中文信息检索技术的执著追求。",
+    "id": 2,
+    "image": "http://www.baidu.com/img/bdlogo.png",
+    "name": "百度",
+    "url": "http://www.baidu.com",
+    "user_id": 1
+  },
+  {
+    "description": "淘宝网是亚太地区较大的网络零售商圈，由阿里巴巴集团在2003年5月10日投资创立。淘宝网现在业务跨越C2C（个人对个人）、B2C（商家对个人）两大部分。截止2010年12月31日，淘宝网注册会员超3.7亿人；2011年交易额为6100.8亿元，占中国网购市场80%的份额。",
+    "id": 3,
+    "image": "http://p4.img.cctvpic.com/nettv/newgame/cdn_pic/mzl.gamzytid.png",
+    "name": "淘宝",
+    "url": "http://www.taobao.com",
+    "user_id": 1
+  }
+]

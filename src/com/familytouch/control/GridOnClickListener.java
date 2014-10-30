@@ -90,6 +90,7 @@ public class GridOnClickListener implements OnItemClickListener {
 						@Override
 						public void onClick(DialogInterface dialog, int which) {
 							// TODO Auto-generated method stub
+//							HomePage.MainBody0Grid1PefChanged = true;
 							((HomePage) activity).updateView(serviceAddList);
 						}
 					});
@@ -129,5 +130,4 @@ public class GridOnClickListener implements OnItemClickListener {
 			break;
 		}
 	}
-
 }

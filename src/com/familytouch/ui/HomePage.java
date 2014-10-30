@@ -6,12 +6,14 @@ import java.util.List;
 import java.util.Map;
 
 import android.R.integer;
+import android.R.string;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.app.ListFragment;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.support.v4.view.PagerAdapter;
@@ -39,12 +41,15 @@ import com.familytouch.control.TitleArrayAdapter;
 import com.familytouch.data.ServiceJsonObject;
 
 public class HomePage extends Activity {
-
 	private final static String INSTANCESTATE = "curChoice";
 	private final static String BUNDLEINDEX = "bundleIndex";
 	private final static String LABKEY = "labelKey";
 	public final static String ICOKEY = "iconKey";
 	private final static int MAINBODY1PAGENUM = 4; // TODO: 设置页面数量
+
+	public final static String SETTINGS = "settings";
+	public final static String MAINBODY0GRID1PERF = "mainBody0Grid1PeferencesKey";
+	public static String MainBody0Grid1PefStr;
 
 	private static List<Integer> titleImgIDList;
 
@@ -72,16 +77,58 @@ public class HomePage extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.aty_homepage);
-		
-		if (savedInstanceState==null) {
+
+		if (savedInstanceState == null) {
 			init();
 		}
 	}
 
 	@Override
+	protected void onDestroy() {
+		// TODO Auto-generated method stub
+		super.onDestroy();
+	}
+
+	@Override
+	protected void onPause() {
+		// TODO Auto-generated method stub
+		super.onPause();
+	}
+
+	@Override
+	protected void onRestart() {
+		// TODO Auto-generated method stub
+		super.onRestart();
+	}
+
+	@Override
+	protected void onStart() {
+		// TODO Auto-generated method stub
+		super.onStart();
+	}
+
+	@Override
+	protected void onStop() {
+		// TODO Auto-generated method stub
+		super.onStop();
+		if (MainBody0Grid1PefStr != null) {
+			SharedPreferences settings = getSharedPreferences(SETTINGS, 0);
+			SharedPreferences.Editor editor = settings.edit();
+			editor.clear();
+//			editor.putBoolean(MAINBODY0GRID1PERF, true);
+			editor.commit();
+		}
+	}
+
+	@Override
+	protected void onResume() {
+		// TODO Auto-generated method stub
+		super.onResume();
+	}
+
+	@Override
 	protected void onSaveInstanceState(Bundle outState) {
 		// TODO Auto-generated method stub
-		outState.putAll(outState);
 		super.onSaveInstanceState(outState);
 	}
 
@@ -209,7 +256,7 @@ public class HomePage extends Activity {
 		titleImgIDList.add(R.drawable.my);
 		titleImgIDList.add(R.drawable.community);
 		titleImgIDList.add(R.drawable.latest);
-		
+
 		getLayoutInflater();
 		// tempView = (View) findViewById(R.layout.layout_mainbody1); return
 		// null why????
@@ -249,30 +296,40 @@ public class HomePage extends Activity {
 			lstItem.add(map);
 		}
 		SimpleAdapter itemAdapter = new SimpleAdapter(this, lstItem,
-				R.layout.grid_item, new String[] { ICOKEY, LABKEY },
-				new int[] { R.id.grid_item_icon, R.id.grid_item_label });
+				R.layout.grid_item, new String[] { ICOKEY, LABKEY }, new int[] {
+						R.id.grid_item_icon, R.id.grid_item_label });
 		mMainBody0GridView0.setAdapter(itemAdapter);
 
-		// MainBody0Grid1
-		String[] grid1Lab = new String[] { "Add" };
-		int[] grid1Img = new int[] { R.drawable.ic_addnewservice };
-		ArrayList<HashMap<String, Object>> grid1LstItem = new ArrayList<HashMap<String, Object>>();
-		for (int i = 0; i < grid1Lab.length; i++) {
-			HashMap<String, Object> grid1map = new HashMap<String, Object>();
-			grid1map.put(LABKEY, grid1Lab[i]);
-			grid1map.put(ICOKEY, grid1Img[i]);
-			grid1LstItem.add(grid1map);
+		SharedPreferences settings = getSharedPreferences(SETTINGS, 0);
+		if (settings.contains(MAINBODY0GRID1PERF)) {
+//			MainBody0Grid1PefChanged = settings.getBoolean(MAINBODY0GRID1PERF,false);
 		}
-		SimpleAdapter grid1ItemAdapter = new SimpleAdapter(this, grid1LstItem,
-				R.layout.grid_item, new String[] { ICOKEY, LABKEY },
-				new int[] { R.id.grid_item_icon, R.id.grid_item_label });
-		mMainBody0GridView1.setAdapter(grid1ItemAdapter);
+		// MainBody0Grid1
+		if (MainBody0Grid1PefStr == null) {
+			String[] grid1Lab = new String[] { "Add" };
+			int[] grid1Img = new int[] { R.drawable.ic_addnewservice };
+			ArrayList<HashMap<String, Object>> grid1LstItem = new ArrayList<HashMap<String, Object>>();
+			for (int i = 0; i < grid1Lab.length; i++) {
+				HashMap<String, Object> grid1map = new HashMap<String, Object>();
+				grid1map.put(LABKEY, grid1Lab[i]);
+				grid1map.put(ICOKEY, grid1Img[i]);
+				grid1LstItem.add(grid1map);
+			}
+			SimpleAdapter grid1ItemAdapter = new SimpleAdapter(this,
+					grid1LstItem, R.layout.grid_item, new String[] { ICOKEY,
+							LABKEY }, new int[] { R.id.grid_item_icon,
+							R.id.grid_item_label });
+			mMainBody0GridView1.setAdapter(grid1ItemAdapter);
 
-		//OnClickListener on grid
+		}else {
+			
+		}
+
+		// OnClickListener on grid
 		GridOnClickListener gridOnClickListener = new GridOnClickListener(this);
 		mMainBody0GridView0.setOnItemClickListener(gridOnClickListener);
 		mMainBody0GridView1.setOnItemClickListener(gridOnClickListener);
-		
+
 		mMainBody0Array = new ArrayList<View>();
 		mMainBody0Array.add(mTitle0ViewPagerGrid0);
 		mMainBody0Array.add(mTitle0ViewPagerGrid1);
@@ -371,26 +428,28 @@ public class HomePage extends Activity {
 	}
 
 	public void updateView(ArrayList<ServiceJsonObject> array) {
-		String[] updateLab = new String[array.size()+1];
-		int[] updateImg = new int[array.size()+1];
+		String[] updateLab = new String[array.size() + 1];
+		int[] updateImg = new int[array.size() + 1];
 		for (int i = 0; i < array.size(); i++) {
 			updateLab[i] = array.get(i).getName();
-			String imgUrl = "ic_addservice"+array.get(i).getId();
-			updateImg[i] = getResources().getIdentifier(imgUrl, "drawable", getPackageName());
+			String imgUrl = "ic_addservice" + array.get(i).getId();
+			updateImg[i] = getResources().getIdentifier(imgUrl, "drawable",
+					getPackageName());
 		}
 		updateLab[array.size()] = "add";
 		updateImg[array.size()] = R.drawable.ic_addnewservice;
-		ArrayList<HashMap<String, Object>> updateList = new ArrayList<HashMap<String,Object>>();
-		
+		ArrayList<HashMap<String, Object>> updateList = new ArrayList<HashMap<String, Object>>();
+
 		for (int i = 0; i < updateLab.length; i++) {
 			HashMap<String, Object> updateMap = new HashMap<String, Object>();
 			updateMap.put(LABKEY, updateLab[i]);
 			updateMap.put(ICOKEY, updateImg[i]);
 			updateList.add(updateMap);
 		}
-		SimpleAdapter grid1UpdateItemAdapter = new SimpleAdapter(this, updateList,
-				R.layout.grid_item, new String[] { ICOKEY, LABKEY },
-				new int[] { R.id.grid_item_icon, R.id.grid_item_label });
+		SimpleAdapter grid1UpdateItemAdapter = new SimpleAdapter(this,
+				updateList, R.layout.grid_item,
+				new String[] { ICOKEY, LABKEY }, new int[] {
+						R.id.grid_item_icon, R.id.grid_item_label });
 		mMainBody0GridView1.setAdapter(grid1UpdateItemAdapter);
 	}
 }

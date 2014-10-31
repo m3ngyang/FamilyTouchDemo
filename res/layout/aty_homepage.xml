@@ -23,7 +23,7 @@
 	        android:id="@+id/titles"
 	        android:layout_width="171dp"
 	        android:layout_height="match_parent"
-	        class="com.familytouch.ui.HomePage$TitleFragment" />
+	        class="com.familytouch.ui.NewHomePage$TitleFragment" />
 	    <FrameLayout
 	        android:id="@+id/details"
 	        android:layout_width="853dp"

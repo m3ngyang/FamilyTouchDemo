@@ -44,7 +44,11 @@ public class HomePage extends Activity {
 	private final static String BUNDLEINDEX = "bundleIndex";
 	private final static String LABKEY = "labelKey";
 	public final static String ICOKEY = "iconKey";
+<<<<<<< HEAD
 	private final static int MAINBODY1PAGENUM = 3; // TODO: 设置页面数量
+=======
+	private final static int MAINBODY1PAGENUM = 4; // TODO: 设置页面数量
+>>>>>>> e9b2e90634ea9c63c2dae5b5456cac413d0979e0
 
 	private static List<Integer> titleImgIDList;
 
@@ -80,6 +84,10 @@ public class HomePage extends Activity {
 
 	@Override
 	protected void onSaveInstanceState(Bundle outState) {
+<<<<<<< HEAD
+=======
+		// TODO Auto-generated method stub
+>>>>>>> e9b2e90634ea9c63c2dae5b5456cac413d0979e0
 		outState.putAll(outState);
 		super.onSaveInstanceState(outState);
 	}
@@ -234,6 +242,7 @@ public class HomePage extends Activity {
 
 		// TODO: test data, 直接依照该方法填充gridview即可
 		// MainBody0Grid0
+<<<<<<< HEAD
 		String[] labels0 = new String[] { "送   餐", "快   递", "叫   车",
 				"订   票", "社区团购", "自助银行", "叫干洗", "缴   费" };
 		int[] imgs0 = new int[] { R.drawable.fastfood, R.drawable.express,
@@ -263,12 +272,41 @@ public class HomePage extends Activity {
 			HashMap<String, Object> grid1map = new HashMap<String, Object>();
 			grid1map.put(LABKEY, labels1[i]);
 			grid1map.put(ICOKEY, imgs1[i]);
+=======
+		String[] testLab = new String[] { "fastfood", "express", "taxi",
+				"around", "groupbuy", "bank", "drylundry", "recharge" };
+		int[] testImg = new int[] { R.drawable.fastfood, R.drawable.express,
+				R.drawable.taxi, R.drawable.around, R.drawable.groupbuy,
+				R.drawable.bank, R.drawable.drylundry, R.drawable.recharge };
+
+		ArrayList<HashMap<String, Object>> lstItem = new ArrayList<HashMap<String, Object>>();
+		for (int i = 0; i < testLab.length; i++) {
+			HashMap<String, Object> map = new HashMap<String, Object>();
+			map.put(ICOKEY, testImg[i]);
+			map.put(LABKEY, testLab[i]);
+			lstItem.add(map);
+		}
+		SimpleAdapter itemAdapter = new SimpleAdapter(this, lstItem,
+				R.layout.grid_item, new String[] { ICOKEY, LABKEY },
+				new int[] { R.id.grid_item_icon, R.id.grid_item_label });
+		mMainBody0GridView0.setAdapter(itemAdapter);
+
+		// MainBody0Grid1
+		String[] grid1Lab = new String[] { "Add" };
+		int[] grid1Img = new int[] { R.drawable.ic_addnewservice };
+		ArrayList<HashMap<String, Object>> grid1LstItem = new ArrayList<HashMap<String, Object>>();
+		for (int i = 0; i < grid1Lab.length; i++) {
+			HashMap<String, Object> grid1map = new HashMap<String, Object>();
+			grid1map.put(LABKEY, grid1Lab[i]);
+			grid1map.put(ICOKEY, grid1Img[i]);
+>>>>>>> e9b2e90634ea9c63c2dae5b5456cac413d0979e0
 			grid1LstItem.add(grid1map);
 		}
 		SimpleAdapter grid1ItemAdapter = new SimpleAdapter(this, grid1LstItem,
 				R.layout.grid_item, new String[] { ICOKEY, LABKEY },
 				new int[] { R.id.grid_item_icon, R.id.grid_item_label });
 		mMainBody0GridView1.setAdapter(grid1ItemAdapter);
+<<<<<<< HEAD
 		
 		// MainBody0Grid1
 		String[] labels2 = new String[] { "添   加" };
@@ -284,6 +322,8 @@ public class HomePage extends Activity {
 				R.layout.grid_item, new String[] { ICOKEY, LABKEY },
 				new int[] { R.id.grid_item_icon, R.id.grid_item_label });
 		mMainBody0GridView2.setAdapter(grid2ItemAdapter);
+=======
+>>>>>>> e9b2e90634ea9c63c2dae5b5456cac413d0979e0
 
 		//OnClickListener on grid
 		GridOnClickListener gridOnClickListener = new GridOnClickListener(this);

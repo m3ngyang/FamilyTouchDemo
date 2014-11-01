@@ -32,10 +32,6 @@
         </activity>
         <activity android:name=".ui.NewHomePage" >
         </activity>
-        <activity
-            android:name="com.familytouch.ui.TestActivity"
-            android:label="@string/title_activity_test" >
-        </activity>
     </application>
 
 </manifest>

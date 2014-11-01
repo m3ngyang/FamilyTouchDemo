@@ -20,6 +20,7 @@ import android.widget.TextView;
 
 import com.familytouch.R;
 import com.familytouch.control.TitleArrayAdapter;
+import com.familytouch.data.Constant;
 import com.familytouch.entity.GridEntity;
 import com.familytouch.util.GridEntityGenerater;
 import com.familytouch.view.GridViewPager;
@@ -32,17 +33,15 @@ public class HomePage extends Activity {
 
 	private static List<Integer> titleImgIDList;
 
-//	protected final static String[] TITLES = { "remind", "fond", "my",
-//			"community", "latest" };
-	protected final static String[] TITLES = {"remind","rank","mine","recent","around"};
+	protected final static String[] TITLES = { "remind", "rank", "mine",
+			"recent", "around" };
 
-	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.aty_homepage);
-		
-		if (savedInstanceState==null) {
+
+		if (savedInstanceState == null) {
 			init();
 		}
 	}
@@ -173,11 +172,7 @@ public class HomePage extends Activity {
 	@SuppressLint("InflateParams")
 	public void init() {
 		titleImgIDList = new ArrayList<Integer>();
-//		titleImgIDList.add(R.drawable.remind);
-//		titleImgIDList.add(R.drawable.fond);
-//		titleImgIDList.add(R.drawable.my);
-//		titleImgIDList.add(R.drawable.community);
-//		titleImgIDList.add(R.drawable.latest);
+
 		titleImgIDList = new ArrayList<Integer>();
 		titleImgIDList.add(R.drawable.remind);
 		titleImgIDList.add(R.drawable.rank);
@@ -186,24 +181,11 @@ public class HomePage extends Activity {
 		titleImgIDList.add(R.drawable.blank1);
 		titleImgIDList.add(R.drawable.blank2);
 		titleImgIDList.add(R.drawable.around);
-		
-		
-		
-		int[] testLab = new int[] { R.string.teststring, R.string.teststring,
-				R.string.teststring, R.string.teststring, R.string.teststring,
-				R.string.teststring, R.string.teststring, R.string.teststring,
-				R.string.teststring, R.string.teststring, R.string.teststring,
-				R.string.teststring, R.string.teststring, R.string.teststring,
-				R.string.teststring, R.string.teststring, R.string.teststring };
-		int[] testImg = new int[] { R.drawable.fastfood, R.drawable.fastfood,
-				R.drawable.express, R.drawable.express, R.drawable.taxi,
-				R.drawable.taxi, R.drawable.around, R.drawable.around,
-				R.drawable.groupbuy, R.drawable.groupbuy, R.drawable.bank,
-				R.drawable.bank, R.drawable.drylundry, R.drawable.drylundry,
-				R.drawable.recharge, R.drawable.recharge, R.drawable.express };
 
-		ArrayList<GridEntity> arrayList = GridEntityGenerater.generate(testImg, testLab);
+		ArrayList<GridEntity> arrayList = GridEntityGenerater.generate(Constant.menuImg,
+				Constant.menuLab);
 		getLayoutInflater();
-		mMainPager = GridViewPager.getGridViewPager(getApplicationContext(),arrayList);
+		mMainPager = GridViewPager.getGridViewPager(getApplicationContext(),
+				arrayList);
 	}
 }

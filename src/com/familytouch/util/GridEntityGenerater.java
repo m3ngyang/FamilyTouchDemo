@@ -5,8 +5,6 @@ package com.familytouch.util;
 
 import java.util.ArrayList;
 
-import android.content.Context;
-
 import com.familytouch.entity.GridEntity;
 
 public class GridEntityGenerater {

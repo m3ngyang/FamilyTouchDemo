@@ -6,6 +6,41 @@
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_new_home_page">NewHomePage</string>
     <string name="teststring">test</string>
-    <string name="title_activity_test">TestActivity</string>
+    
+    <!-- 一级图标 -->
+    <string name="nearby">周边</string>
+    <string name="fastfood">送餐</string>
+    <string name="express">快递</string>
+    <string name="taxi">叫车</string>
+    <string name="ticket">票务</string>
+    <string name="travel">出行</string>
+    <string name="pay">缴费</string>
+    <string name="householding">家政</string>
+    
+    <string name="nearbycenter">邻里中心</string>
+    <string name="nearbyactivity">邻里活动</string>
+    <string name="communitybuy">社区团购</string>
+    <string name="drylundry">叫干洗</string>
+    <string name="callservice">叫服务</string>
+    <string name="deliver">送上门</string>
+    <string name="buy">买东西</string>
+    <string name="theoldservice">老人服务</string>
+    
+    <string name="groupbuy">团购</string>
+    <string name="parentchildren">亲子</string>
+    <string name="property">物业</string>
+    <string name="smartmedicare">智慧医疗</string>
+    <string name="smarthouse">智能家居</string>
+    <string name="bank">自助银行</string>
+    <string name="pet">宠物</string>
+    <string name="finance">理财</string>
+    
+    <string name="numberone">1号点</string>
+    <string name="amazon">亚马逊</string>
+    <string name="qiqi">美味七七</string>
+    <string name="guangguang">逛逛</string>
+    <string name="mobiledevice">移动设备</string>
+    <string name="setting">设置</string>
+    <string name="plus">更多</string>
 
 </resources>

@@ -20,73 +20,86 @@ import android.widget.ImageView;
 import android.widget.SimpleAdapter;
 
 import com.familytouch.R;
+import com.familytouch.data.GridEntity;
 
 public class GridViewPager {
-	protected static ViewPager viewPager;
-	protected static ViewGroup pointViewGroup;
-	private static ImageView[] mIndicator;
-
-	// 左边title对应的fragment
 	private static View mMainPager;
-
-	private static ArrayList<View> mMainBody0Array;
+	private static ViewPager viewPager;
+	private static ViewGroup pointViewGroup;
+	private static ImageView[] mIndicator;
 	
+	private static final int ICONNUMPERPAGE = 8;
 	private final static String LABKEY = "labelKey";
-	public final static String ICOKEY = "iconKey";
-	private final static int MAINBODY1PAGENUM = 4; // TODO: 设置页面数量
+	private final static String ICOKEY = "iconKey";
+	private static int pageNum;
 	
-	public static View getGridViewPager(Context context){
+	public static View getGridViewPager(Context context, ArrayList<GridEntity> arrayList){
 		mMainPager = LayoutInflater.from(context).inflate(
 				R.layout.layout_viewpager, null);
 		ArrayList<View> pageList = new ArrayList<View>();
 		ArrayList<GridView> gridViewList = new ArrayList<GridView>();
-		for (int i = 0; i < 4; i++) {
+		
+		pageNum = (arrayList.size() % ICONNUMPERPAGE > 0) ? arrayList
+				.size() / ICONNUMPERPAGE + 1 : arrayList.size()
+				/ ICONNUMPERPAGE; 
+		
+		for (int i = 0; i < pageNum; i++) {
 			View page = LayoutInflater.from(context).inflate(R.layout.layout_gridview, null);
 			GridView gridView = (GridView) page.findViewById(R.id.gridview);
 			pageList.add(page);
 			gridViewList.add(gridView);
 		}
 
-		String[] testLab = new String[] { "fastfood", "express", "taxi",
-				"around", "groupbuy", "bank", "drylundry", "recharge" };
-		int[] testImg = new int[] { R.drawable.fastfood, R.drawable.express,
-				R.drawable.taxi, R.drawable.around, R.drawable.groupbuy,
-				R.drawable.bank, R.drawable.drylundry, R.drawable.recharge };
+		int intPart = arrayList.size() / ICONNUMPERPAGE;
+		int modPart = arrayList.size() % ICONNUMPERPAGE;
 
-		ArrayList<HashMap<String, Object>> lstItem = new ArrayList<HashMap<String, Object>>();
-		for (int i = 0; i < testLab.length; i++) {
-			HashMap<String, Object> map = new HashMap<String, Object>();
-			map.put(ICOKEY, testImg[i]);
-			map.put(LABKEY, testLab[i]);
-			lstItem.add(map);
+		ArrayList<ArrayList<GridEntity>> lstlst = new ArrayList<ArrayList<GridEntity>>();
+		for (int i = 0; i < pageNum; i++) {
+			ArrayList<GridEntity> beanLst = new ArrayList<GridEntity>();
+			lstlst.add(beanLst);
 		}
-		SimpleAdapter itemAdapter = new SimpleAdapter(context, lstItem,
-				R.layout.grid_item, new String[] { ICOKEY, LABKEY },
-				new int[] { R.id.grid_item_icon, R.id.grid_item_label });
-		gridViewList.get(0).setAdapter(itemAdapter);
-
-		String[] grid1Lab = new String[] { "Add" };
-		int[] grid1Img = new int[] { R.drawable.ic_addnewservice };
-		ArrayList<HashMap<String, Object>> grid1LstItem = new ArrayList<HashMap<String, Object>>();
-		for (int i = 0; i < grid1Lab.length; i++) {
-			HashMap<String, Object> grid1map = new HashMap<String, Object>();
-			grid1map.put(LABKEY, grid1Lab[i]);
-			grid1map.put(ICOKEY, grid1Img[i]);
-			grid1LstItem.add(grid1map);
+		for (int i = 0; i < intPart; i++) {
+			ArrayList<GridEntity> beanLst = lstlst.get(i);
+			for (int j = 0; j < ICONNUMPERPAGE; j++) {
+				beanLst.add(arrayList.get(i * ICONNUMPERPAGE + j));
+			}
+			ArrayList<HashMap<String, Object>> lstItem = new ArrayList<HashMap<String, Object>>();
+			for (int j = 0; j < beanLst.size(); j++) {
+				HashMap<String, Object> map = new HashMap<String, Object>();
+				map.put(ICOKEY, beanLst.get(j).getGridIcon());
+				map.put(LABKEY, beanLst.get(j).getGridLabel());
+				lstItem.add(map);
+			}
+			SimpleAdapter itemAdapter = new SimpleAdapter(context, lstItem,
+					R.layout.grid_item, new String[] { ICOKEY, LABKEY },
+					new int[] { R.id.grid_item_icon, R.id.grid_item_label });
+			gridViewList.get(i).setAdapter(itemAdapter);
+			gridViewList.get(i).setOnItemClickListener(null);
 		}
-		SimpleAdapter grid1ItemAdapter = new SimpleAdapter(context, grid1LstItem,
-				R.layout.grid_item, new String[] { ICOKEY, LABKEY },
-				new int[] { R.id.grid_item_icon, R.id.grid_item_label });
-		gridViewList.get(1).setAdapter(grid1ItemAdapter);
 
-		gridViewList.get(0).setOnItemClickListener(null);
-		gridViewList.get(1).setOnItemClickListener(null);
+		if (modPart != 0) {
+			ArrayList<GridEntity> beanLst = lstlst.get(lstlst.size() - 1);
+			for (int i = 0; i < modPart; i++) {
+				beanLst.add(arrayList.get(intPart * ICONNUMPERPAGE + i));
+			}
+			ArrayList<HashMap<String, Object>> lstItem = new ArrayList<HashMap<String, Object>>();
+			for (int j = 0; j < beanLst.size(); j++) {
+				HashMap<String, Object> map = new HashMap<String, Object>();
+				map.put(ICOKEY, beanLst.get(j).getGridIcon());
+				map.put(LABKEY, beanLst.get(j).getGridLabel());
+				lstItem.add(map);
+			}
+			SimpleAdapter itemAdapter = new SimpleAdapter(context, lstItem,
+					R.layout.grid_item, new String[] { ICOKEY, LABKEY },
+					new int[] { R.id.grid_item_icon, R.id.grid_item_label });
+			gridViewList.get(gridViewList.size() - 1).setAdapter(itemAdapter);
+			gridViewList.get(gridViewList.size() - 1).setOnItemClickListener(
+					null);
+		}
 		
-		mMainBody0Array = pageList;
-
 		pointViewGroup = (ViewGroup) mMainPager.findViewById(R.id.indicators);
 		viewPager = (ViewPager) mMainPager.findViewById(R.id.viewpager);
-		mIndicator = new ImageView[MAINBODY1PAGENUM];
+		mIndicator = new ImageView[pageNum];
 
 		for (int i = 0; i < mIndicator.length; i++) {
 			ImageView pointImageView = new ImageView(context);
@@ -103,7 +116,7 @@ public class GridViewPager {
 			pointViewGroup.addView(pointImageView);
 		}
 
-		ViewPagerAdapter adapter = new ViewPagerAdapter();
+		ViewPagerAdapter adapter = new ViewPagerAdapter(pageList);
 		viewPager.setAdapter(adapter);
 		ViewPagerPageChangeListener listener = new ViewPagerPageChangeListener();
 		viewPager.setOnPageChangeListener(listener);
@@ -112,10 +125,14 @@ public class GridViewPager {
 	}
 	
 	public static class ViewPagerAdapter extends PagerAdapter {
-
+		ArrayList<View> list;
+		public ViewPagerAdapter(ArrayList<View> list){
+			this.list = list;
+		}
+		
 		@Override
 		public int getCount() {
-			return mMainBody0Array.size();
+			return list.size();
 		}
 
 		@Override
@@ -137,13 +154,12 @@ public class GridViewPager {
 		@Override
 		public Object instantiateItem(ViewGroup container, int position) {
 			try {
-				container.addView(mMainBody0Array.get(position));
+				container.addView(list.get(position));
 			} catch (Exception e) {
 			}
 
-			return mMainBody0Array.get(position);
+			return list.get(position);
 		}
-
 	}
 
 	public static class ViewPagerPageChangeListener implements OnPageChangeListener {

@@ -1,7 +1,6 @@
 package com.familytouch.ui;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 import android.annotation.SuppressLint;
@@ -11,27 +10,17 @@ import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.app.ListFragment;
 import android.os.Bundle;
-import android.os.Parcelable;
-import android.support.v4.view.PagerAdapter;
-import android.support.v4.view.ViewPager;
-import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewGroup.LayoutParams;
-import android.widget.GridView;
-import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.ScrollView;
-import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
 import com.familytouch.R;
-import com.familytouch.control.GridOnClickListener;
 import com.familytouch.control.TitleArrayAdapter;
-import com.familytouch.data.ServiceJsonObject;
-import com.familytouch.util.GridViewPagerFactory;
+import com.familytouch.data.GridEntity;
 import com.familytouch.view.GridViewPager;
 
 public class HomePage extends Activity {
@@ -188,33 +177,28 @@ public class HomePage extends Activity {
 		titleImgIDList.add(R.drawable.community);
 		titleImgIDList.add(R.drawable.latest);
 		
+		
+		int[] testLab = new int[] { R.string.teststring, R.string.teststring,
+				R.string.teststring, R.string.teststring, R.string.teststring,
+				R.string.teststring, R.string.teststring, R.string.teststring,
+				R.string.teststring, R.string.teststring, R.string.teststring,
+				R.string.teststring, R.string.teststring, R.string.teststring,
+				R.string.teststring, R.string.teststring, R.string.teststring };
+		int[] testImg = new int[] { R.drawable.fastfood, R.drawable.fastfood,
+				R.drawable.express, R.drawable.express, R.drawable.taxi,
+				R.drawable.taxi, R.drawable.around, R.drawable.around,
+				R.drawable.groupbuy, R.drawable.groupbuy, R.drawable.bank,
+				R.drawable.bank, R.drawable.drylundry, R.drawable.drylundry,
+				R.drawable.recharge, R.drawable.recharge, R.drawable.express };
+
+		ArrayList<GridEntity> arrayList = new ArrayList<GridEntity>();
+		for (int i = 0; i < testImg.length; i++) {
+			GridEntity entity = new GridEntity();
+			entity.setGridIcon(testImg[i]);
+			entity.setGridLabel(testLab[i]);
+			arrayList.add(entity);
+		}
 		getLayoutInflater();
-		mMainPager = GridViewPager.getGridViewPager(getApplicationContext());
-	}
-
-	
-
-	public void updateView(ArrayList<ServiceJsonObject> array) {
-//		String[] updateLab = new String[array.size()+1];
-//		int[] updateImg = new int[array.size()+1];
-//		for (int i = 0; i < array.size(); i++) {
-//			updateLab[i] = array.get(i).getName();
-//			String imgUrl = "ic_addservice"+array.get(i).getId();
-//			updateImg[i] = getResources().getIdentifier(imgUrl, "drawable", getPackageName());
-//		}
-//		updateLab[array.size()] = "add";
-//		updateImg[array.size()] = R.drawable.ic_addnewservice;
-//		ArrayList<HashMap<String, Object>> updateList = new ArrayList<HashMap<String,Object>>();
-//		
-//		for (int i = 0; i < updateLab.length; i++) {
-//			HashMap<String, Object> updateMap = new HashMap<String, Object>();
-//			updateMap.put(LABKEY, updateLab[i]);
-//			updateMap.put(ICOKEY, updateImg[i]);
-//			updateList.add(updateMap);
-//		}
-//		SimpleAdapter grid1UpdateItemAdapter = new SimpleAdapter(this, updateList,
-//				R.layout.grid_item, new String[] { ICOKEY, LABKEY },
-//				new int[] { R.id.grid_item_icon, R.id.grid_item_label });
-//		mMainBody0GridView1.setAdapter(grid1UpdateItemAdapter);
+		mMainPager = GridViewPager.getGridViewPager(getApplicationContext(),arrayList);
 	}
 }

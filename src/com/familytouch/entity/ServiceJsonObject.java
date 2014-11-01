@@ -1,4 +1,4 @@
-package com.familytouch.data;
+package com.familytouch.entity;
 
 public class ServiceJsonObject {
 	

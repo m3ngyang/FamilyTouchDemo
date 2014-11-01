@@ -20,7 +20,8 @@ import android.widget.TextView;
 
 import com.familytouch.R;
 import com.familytouch.control.TitleArrayAdapter;
-import com.familytouch.data.GridEntity;
+import com.familytouch.entity.GridEntity;
+import com.familytouch.util.GridEntityGenerater;
 import com.familytouch.view.GridViewPager;
 
 public class HomePage extends Activity {
@@ -191,13 +192,7 @@ public class HomePage extends Activity {
 				R.drawable.bank, R.drawable.drylundry, R.drawable.drylundry,
 				R.drawable.recharge, R.drawable.recharge, R.drawable.express };
 
-		ArrayList<GridEntity> arrayList = new ArrayList<GridEntity>();
-		for (int i = 0; i < testImg.length; i++) {
-			GridEntity entity = new GridEntity();
-			entity.setGridIcon(testImg[i]);
-			entity.setGridLabel(testLab[i]);
-			arrayList.add(entity);
-		}
+		ArrayList<GridEntity> arrayList = GridEntityGenerater.generate(testImg, testLab);
 		getLayoutInflater();
 		mMainPager = GridViewPager.getGridViewPager(getApplicationContext(),arrayList);
 	}

@@ -1,7 +1,7 @@
 /**
  * @author Kaffa
  */
-package com.familytouch.data;
+package com.familytouch.entity;
 
 public class GridEntity {
 	private int gridIcon;
@@ -18,4 +18,5 @@ public class GridEntity {
 	public void setGridLabel(int gridLabel) {
 		this.gridLabel = gridLabel;
 	}
+	
 }

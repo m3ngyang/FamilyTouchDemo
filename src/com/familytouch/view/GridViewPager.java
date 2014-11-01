@@ -20,7 +20,7 @@ import android.widget.ImageView;
 import android.widget.SimpleAdapter;
 
 import com.familytouch.R;
-import com.familytouch.data.GridEntity;
+import com.familytouch.entity.GridEntity;
 
 public class GridViewPager {
 	private static View mMainPager;

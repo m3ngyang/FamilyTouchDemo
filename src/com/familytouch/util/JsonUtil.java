@@ -20,7 +20,7 @@ import org.json.JSONObject;
 import android.content.Context;
 import android.os.AsyncTask;
 
-import com.familytouch.data.ServiceJsonObject;
+import com.familytouch.entity.ServiceJsonObject;
 
 public class JsonUtil{
 	

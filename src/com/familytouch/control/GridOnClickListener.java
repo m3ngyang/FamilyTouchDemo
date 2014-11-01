@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import com.familytouch.R;
-import com.familytouch.data.ServiceJsonObject;
+import com.familytouch.entity.ServiceJsonObject;
 import com.familytouch.ui.WebBrowser;
 import com.familytouch.util.JsonUtil;
 

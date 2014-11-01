@@ -32,8 +32,9 @@ public class HomePage extends Activity {
 
 	private static List<Integer> titleImgIDList;
 
-	protected final static String[] TITLES = { "remind", "fond", "my",
-			"community", "latest" };
+//	protected final static String[] TITLES = { "remind", "fond", "my",
+//			"community", "latest" };
+	protected final static String[] TITLES = {"remind","rank","mine","recent","around"};
 
 	
 	@Override
@@ -172,11 +173,20 @@ public class HomePage extends Activity {
 	@SuppressLint("InflateParams")
 	public void init() {
 		titleImgIDList = new ArrayList<Integer>();
+//		titleImgIDList.add(R.drawable.remind);
+//		titleImgIDList.add(R.drawable.fond);
+//		titleImgIDList.add(R.drawable.my);
+//		titleImgIDList.add(R.drawable.community);
+//		titleImgIDList.add(R.drawable.latest);
+		titleImgIDList = new ArrayList<Integer>();
 		titleImgIDList.add(R.drawable.remind);
-		titleImgIDList.add(R.drawable.fond);
-		titleImgIDList.add(R.drawable.my);
-		titleImgIDList.add(R.drawable.community);
-		titleImgIDList.add(R.drawable.latest);
+		titleImgIDList.add(R.drawable.rank);
+		titleImgIDList.add(R.drawable.mine);
+		titleImgIDList.add(R.drawable.recent);
+		titleImgIDList.add(R.drawable.blank1);
+		titleImgIDList.add(R.drawable.blank2);
+		titleImgIDList.add(R.drawable.around);
+		
 		
 		
 		int[] testLab = new int[] { R.string.teststring, R.string.teststring,

@@ -5,7 +5,7 @@ package com.familytouch.view;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Parcelable;
 import android.support.v4.view.PagerAdapter;
@@ -18,7 +18,6 @@ import android.view.ViewGroup.LayoutParams;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.SimpleAdapter;
-
 import com.familytouch.R;
 import com.familytouch.entity.GridEntity;
 
@@ -27,12 +26,13 @@ public class GridViewPager {
 	private static ViewPager viewPager;
 	private static ViewGroup pointViewGroup;
 	private static ImageView[] mIndicator;
-	
-	private static final int ICONNUMPERPAGE = 8;
-	private final static String LABKEY = "labelKey";
-	private final static String ICOKEY = "iconKey";
 	private static int pageNum;
 	
+	private final static int ICONNUMPERPAGE = 8;
+	private final static String LABKEY = "labelKey";
+	private final static String ICOKEY = "iconKey";
+	
+	@SuppressLint("InflateParams")
 	public static View getGridViewPager(Context context, ArrayList<GridEntity> arrayList){
 		mMainPager = LayoutInflater.from(context).inflate(
 				R.layout.layout_viewpager, null);
@@ -67,7 +67,7 @@ public class GridViewPager {
 			for (int j = 0; j < beanLst.size(); j++) {
 				HashMap<String, Object> map = new HashMap<String, Object>();
 				map.put(ICOKEY, beanLst.get(j).getGridIcon());
-				map.put(LABKEY, beanLst.get(j).getGridLabel());
+				map.put(LABKEY, context.getString(beanLst.get(j).getGridLabel()));
 				lstItem.add(map);
 			}
 			SimpleAdapter itemAdapter = new SimpleAdapter(context, lstItem,
@@ -86,7 +86,7 @@ public class GridViewPager {
 			for (int j = 0; j < beanLst.size(); j++) {
 				HashMap<String, Object> map = new HashMap<String, Object>();
 				map.put(ICOKEY, beanLst.get(j).getGridIcon());
-				map.put(LABKEY, beanLst.get(j).getGridLabel());
+				map.put(LABKEY, context.getString(beanLst.get(j).getGridLabel()));
 				lstItem.add(map);
 			}
 			SimpleAdapter itemAdapter = new SimpleAdapter(context, lstItem,

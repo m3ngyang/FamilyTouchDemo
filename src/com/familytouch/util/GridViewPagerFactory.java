@@ -14,6 +14,7 @@ import android.os.Parcelable;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -44,7 +45,7 @@ public class GridViewPagerFactory {
 				null);
 		viewPager = (ViewPager) view.findViewById(R.id.viewpager);
 		pointGroup = (ViewGroup) view.findViewById(R.id.indicators);
-
+		
 		int pageNum = (arrayList.size() % ICONNUMPERPAGE > 0) ? arrayList
 				.size() / ICONNUMPERPAGE + 1 : arrayList.size()
 				/ ICONNUMPERPAGE;
@@ -58,7 +59,16 @@ public class GridViewPagerFactory {
 			gridView = (GridView) page.findViewById(R.id.gridview);
 			gridViewList.add(gridView);
 		}
-
+		
+		//test
+//		boolean p0 = (gridViewList.get(0).getParent()== pageList.get(0));
+//		boolean p1 = (gridViewList.get(1).getParent()== pageList.get(1));
+//		boolean p2 = (gridViewList.get(2).getParent()== pageList.get(2));
+//		
+//		boolean b0 = (gridViewList.get(0).getParent().equals(pageList.get(0)));
+//		boolean b1 = (gridViewList.get(1).getParent().equals(pageList.get(1)));
+//		boolean b2 = (gridViewList.get(2).getParent().equals(pageList.get(2)));
+		
 		int intPart = arrayList.size() / ICONNUMPERPAGE;
 		int modPart = arrayList.size() % ICONNUMPERPAGE;
 
@@ -107,6 +117,8 @@ public class GridViewPagerFactory {
 					null);
 		}
 
+		
+		
 		indicators = new ImageView[pageNum];
 		for (int i = 0; i < indicators.length; i++) {
 			ImageView point = new ImageView(context);
@@ -123,26 +135,25 @@ public class GridViewPagerFactory {
 			pointGroup.addView(point);
 		}
 
-		viewPagerAdapter = new ViewPagerAdapter(pageNum);
+		viewPagerAdapter = new ViewPagerAdapter(pageList);
 		viewPager.setAdapter(viewPagerAdapter);
-		viewPagerListener = new ViewPagerPageChangeListener(pageNum);
+		viewPagerListener = new ViewPagerPageChangeListener();
 		viewPager.setOnPageChangeListener(viewPagerListener);
-		viewPager.setCurrentItem(pageNum * 100);
 
 		return view;
 	}
 
 	public static class ViewPagerAdapter extends PagerAdapter {
-		private int num;
-
-		public ViewPagerAdapter(int i) {
-			this.num = i;
+		private ArrayList<View> list;
+		
+		public ViewPagerAdapter(ArrayList<View> list){
+			this.list = list;
 		}
-
+		
 		@Override
 		public int getCount() {
 			// TODO Auto-generated method stub
-			return Integer.MAX_VALUE;
+			return list.size();
 		}
 
 		@Override
@@ -154,18 +165,16 @@ public class GridViewPagerFactory {
 		@Override
 		public void destroyItem(ViewGroup container, int position, Object object) {
 			// TODO Auto-generated method stub
-			// super.destroyItem(container, position, object);
+			container.removeView(list.get(position));
+			Log.i("debug", "container deletes page "+position);
 		}
 
 		@Override
 		public Object instantiateItem(ViewGroup container, int position) {
 			// TODO Auto-generated method stub
-			try {
-				container.addView(pageList.get(position % num));
-			} catch (Exception e) {
-				// TODO: handle exception
-			}
-			return pageList.get(position % num);
+			container.addView(list.get(position),0);
+			Log.i("debug", "container adds page "+position);
+			return list.get(position);
 		}
 
 		@Override
@@ -173,16 +182,17 @@ public class GridViewPagerFactory {
 			// TODO Auto-generated method stub
 			return super.saveState();
 		}
+
+		@Override
+		public void setPrimaryItem(ViewGroup container, int position,
+				Object object) {
+			// TODO Auto-generated method stub
+			super.setPrimaryItem(container, 0, object);
+		}
 	}
 
 	public static class ViewPagerPageChangeListener implements
 			OnPageChangeListener {
-		private int num;
-
-		public ViewPagerPageChangeListener(int num) {
-			this.num = num;
-		}
-
 		@Override
 		public void onPageScrollStateChanged(int arg0) {
 			// TODO Auto-generated method stub
@@ -198,10 +208,11 @@ public class GridViewPagerFactory {
 		@Override
 		public void onPageSelected(int arg0) {
 			// TODO Auto-generated method stub
-			updateIndicatorState(arg0 % num);
+			updateIndicatorState(arg0);
 		}
 
 		private void updateIndicatorState(int index) {
+			Log.i("debug", "current indicator "+ index);
 			for (int i = 0; i < indicators.length; i++) {
 				if (i == index) {
 					indicators[i]

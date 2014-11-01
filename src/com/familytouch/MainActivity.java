@@ -1,6 +1,6 @@
 package com.familytouch;
 
-import com.familytouch.ui.NewHomePage;
+import com.familytouch.ui.HomePage;
 
 import android.os.Bundle;
 import android.app.Activity;
@@ -13,7 +13,7 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
-		startActivity(new Intent(MainActivity.this, NewHomePage.class));
+		startActivity(new Intent(MainActivity.this, HomePage.class));
 		
 		finish();
 	}

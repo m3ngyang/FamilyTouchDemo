@@ -42,6 +42,7 @@
     <string name="mobiledevice">移动设备</string>
     <string name="setting">设置</string>
     <string name="plus">更多</string>
+<<<<<<< HEAD
     
     <!-- 送上门 -->
     <string name="water">水</string>
@@ -75,4 +76,7 @@
     <string name="pe">上门体检</string>
     <string name="aunt">找阿姨</string>
     
+=======
+
+>>>>>>> 6797843ca81975052c3d49155c3899a399ee4c26
 </resources>

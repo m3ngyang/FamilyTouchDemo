@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/bg" >
+    
+    <!-- 测试设备物理规格1024*600，除去状态栏及控制栏后屏幕实际像素为1024*527 -->
+    
+    <LinearLayout android:id="@+id/layoutTop"
+        android:layout_width="match_parent"  
+	    android:layout_height="60dp"
+	    android:orientation="vertical"
+	    android:background="@drawable/top" >
+    </LinearLayout>
+    
+    <LinearLayout android:id="@+id/layoutMid"
+        android:layout_width="match_parent"
+    	android:layout_height="467dp" 
+    	android:orientation="horizontal"
+    	android:background="#00000000" >
+    	<fragment
+	        android:id="@+id/titles"
+	        android:layout_width="92dp"
+	        android:layout_height="match_parent"
+	        class="com.familytouch.ui.HomePage$TitleFragment" />
+	    <FrameLayout
+	        android:id="@+id/details"
+	        android:layout_width="932dp"
+	        android:layout_height="match_parent"
+	        android:background="#00000000" >
+    </FrameLayout>
+    </LinearLayout> 
+</LinearLayout>

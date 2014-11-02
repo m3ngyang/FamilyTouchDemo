@@ -6,10 +6,19 @@ package com.familytouch.control;
 import java.util.HashMap;
 
 import com.familytouch.R;
+<<<<<<< HEAD
 import com.familytouch.data.Constant;
 import com.familytouch.view.SquareMenu;
 
 import android.content.Context;
+=======
+import com.familytouch.entity.ServiceJsonObject;
+import com.familytouch.ui.WebBrowser;
+import com.familytouch.util.JsonUtil;
+
+import android.app.Activity;
+import android.app.AlertDialog;
+>>>>>>> 6797843ca81975052c3d49155c3899a399ee4c26
 import android.content.Intent;
 import android.view.View;
 import android.widget.AdapterView;
@@ -35,6 +44,7 @@ public class GridOnClickListener implements OnItemClickListener {
 	public void onItemClick(AdapterView<?> parent, View view, int position,
 			long rowid) {
 		// TODO Auto-generated method stub
+<<<<<<< HEAD
 		@SuppressWarnings("unchecked")
 		HashMap<String, Object> itemMap = (HashMap<String, Object>) parent
 				.getItemAtPosition(position);
@@ -71,6 +81,9 @@ public class GridOnClickListener implements OnItemClickListener {
 		default:
 			break;
 		}
+=======
+	}
+>>>>>>> 6797843ca81975052c3d49155c3899a399ee4c26
 
 	}
 }

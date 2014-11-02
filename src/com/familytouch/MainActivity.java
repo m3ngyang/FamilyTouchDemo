@@ -1,5 +1,10 @@
 package com.familytouch;
 
+import com.familytouch.gallery.CourseGalleryActivity;
+import com.familytouch.gallery.FruitGalleryActivity;
+import com.familytouch.gallery.GroupbuyGalleryActivity;
+import com.familytouch.gallery.NearbyGalleryActivity;
+import com.familytouch.gallery.PetGalleryActivity;
 import com.familytouch.ui.HomePage;
 
 import android.os.Bundle;
@@ -13,7 +18,16 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
+<<<<<<< HEAD
 		startActivity(new Intent(MainActivity.this, HomePage.class));
+=======
+//		startActivity(new Intent(MainActivity.this, HomePage.class));
+		startActivity(new Intent(MainActivity.this, FruitGalleryActivity.class));
+//		startActivity(new Intent(MainActivity.this, NearbyGalleryActivity.class));
+//		startActivity(new Intent(MainActivity.this, GroupbuyGalleryActivity.class));
+//		startActivity(new Intent(MainActivity.this, CourseGalleryActivity.class));
+//		startActivity(new Intent(MainActivity.this, PetGalleryActivity.class));
+>>>>>>> 6797843ca81975052c3d49155c3899a399ee4c26
 		
 		finish();
 	}

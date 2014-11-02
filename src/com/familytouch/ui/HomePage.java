@@ -48,7 +48,6 @@ public class HomePage extends Activity {
 
 	@Override
 	protected void onSaveInstanceState(Bundle outState) {
-		// TODO Auto-generated method stub
 		outState.putAll(outState);
 		super.onSaveInstanceState(outState);
 	}
@@ -156,7 +155,7 @@ public class HomePage extends Activity {
 				view1 = mMainPager;
 				return view1;
 			default:
-				// 其他选项，未做，先用文字代替
+				//TODO: 其他选项，未做，先用文字代替
 				TextView text = new TextView(getActivity());
 				int padding = (int) TypedValue.applyDimension(
 						TypedValue.COMPLEX_UNIT_DIP, 4, getActivity()
@@ -185,8 +184,13 @@ public class HomePage extends Activity {
 		ArrayList<GridEntity> arrayList = GridEntityGenerater.generate(Constant.menuImg,
 				Constant.menuLab);
 		getLayoutInflater();
+<<<<<<< HEAD
 //		mMainPager = GridViewPager.getGridViewPager(getApplicationContext(),
 //				arrayList);
 		mMainPager = GridViewPager.getGridViewPager(HomePage.this, arrayList);
+=======
+		mMainPager = GridViewPager.getGridViewPager(getApplicationContext(),
+				arrayList);
+>>>>>>> 6797843ca81975052c3d49155c3899a399ee4c26
 	}
 }

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="@drawable/bg_noleftbar" >
+    
+    <!-- 测试设备物理规格1024*600，除去状态栏及控制栏后屏幕实际像素为1024*527 -->
+    
+    <LinearLayout
+        android:layout_width="match_parent"  
+	    android:layout_height="60dp"
+	    android:orientation="vertical"
+	    android:background="@drawable/top" >
+    </LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="match_parent"  
+	    android:layout_height="45dp"
+	    android:orientation="vertical" >
+    </LinearLayout>
+    
+    <LinearLayout 
+        android:layout_width="match_parent"  
+	    android:layout_height="370dp"
+	    android:orientation="vertical" >
+	    <Gallery android:id="@+id/gallery" 
+	       android:layout_width="match_parent"  
+	   	   android:layout_height="match_parent" />
+    </LinearLayout>
+    
+
+</LinearLayout>

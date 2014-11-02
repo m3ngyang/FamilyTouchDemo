@@ -6,12 +6,15 @@ package com.familytouch.data;
 import com.familytouch.R;
 
 public class Constant {
+<<<<<<< HEAD
 	public static final String LABKEY = "labelKey";
 	public static final String ICOKEY = "iconKey";
 
 	public static final String LABLISTKEY = "labListKey";
 	public static final String ICOLISTKEY = "iconListKey";
 
+=======
+>>>>>>> 6797843ca81975052c3d49155c3899a399ee4c26
 	public static final int[] menuImg = new int[] { R.drawable.nearby,
 			R.drawable.fastfood, R.drawable.express, R.drawable.taxi,
 			R.drawable.ticket, R.drawable.travel, R.drawable.pay,
@@ -46,6 +49,7 @@ public class Constant {
 			R.string.numberone, R.string.amazon, R.string.qiqi,
 			R.string.guangguang, R.string.mobiledevice, R.string.setting,
 			R.string.plus };
+<<<<<<< HEAD
 
 	public static final int[] deliveryImg = new int[] { R.drawable.water,
 			R.drawable.rice, R.drawable.oil, R.drawable.milk, R.drawable.egg,
@@ -77,4 +81,12 @@ public class Constant {
 
 	public static final int[] oldserviceLab = new int[] {
 			R.string.basicservice, R.string.massage, R.string.pe, R.string.aunt };
+=======
+	
+	public static final int[] IMG_FRUIT = new int[] { R.drawable.cherry, R.drawable.blueberry };
+	public static final int[] IMG_NEARBYACTIVITY = new int[] { R.drawable.outing, R.drawable.riding };
+	public static final int[] IMG_GROUPBUY = new int[] { R.drawable.fruitgift, R.drawable.coffee };
+	public static final int[] IMG_PARENTCHILDREN = new int[] { R.drawable.english, R.drawable.swim };
+	public static final int[] IMG_PET = new int[] { R.drawable.catfood, R.drawable.walkdog };
+>>>>>>> 6797843ca81975052c3d49155c3899a399ee4c26
 }

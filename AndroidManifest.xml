@@ -24,7 +24,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-<<<<<<< HEAD
         <activity android:name=".ui.HomePage" >
         </activity>
         <activity android:name=".ui.ServiceCheckBoxPreference" >
@@ -36,16 +35,12 @@
         <activity android:name=".view.SquareMenu"
             android:theme="@style/SquareMenu">
         </activity>
-=======
-        <activity android:name=".ui.HomePage" ></activity>
-        <activity android:name=".ui.WebBrowser" ></activity>
-        <activity android:name=".ui.NewHomePage" ></activity>
-        <activity android:name="com.familytouch.gallery.GalleryActivity" ></activity>
-        <activity android:name="com.familytouch.gallery.NearbyGalleryActivity" ></activity>
-        <activity android:name="com.familytouch.gallery.GroupbuyGalleryActivity" ></activity>
-        <activity android:name="com.familytouch.gallery.CourseGalleryActivity" ></activity>
-        <activity android:name="com.familytouch.gallery.PetGalleryActivity" ></activity>
->>>>>>> 6797843ca81975052c3d49155c3899a399ee4c26
+        <activity android:name="com.familytouch.ui.GalleryActivity" ></activity>
+        <activity android:name=".gallery.NearbyGalleryActivity" ></activity>
+        <activity android:name=".gallery.GroupbuyGalleryActivity" ></activity>
+        <activity android:name=".gallery.CourseGalleryActivity" ></activity>
+        <activity android:name=".gallery.PetGalleryActivity" ></activity>
+        <activity android:name=".gallery.FruitGalleryActivity"></activity>
     </application>
 
 </manifest>

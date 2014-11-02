@@ -5,9 +5,12 @@ package com.familytouch.view;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+
 import com.familytouch.R;
+import com.familytouch.control.GridOnClickListener;
 import com.familytouch.data.Constant;
 import com.familytouch.entity.GridEntity;
+
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -34,7 +37,7 @@ public class SquarePage {
 				R.layout.grid_item, new String[] { Constant.ICOKEY, Constant.LABKEY },
 				new int[] { R.id.grid_item_icon, R.id.grid_item_label });
 		gridView.setAdapter(itemAdapter);
-		gridView.setOnItemClickListener(null);
+		gridView.setOnItemClickListener(GridOnClickListener.getInstance(context));
 		return view;
 	}
 }

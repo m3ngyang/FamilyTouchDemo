@@ -5,10 +5,7 @@ package com.familytouch.view;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-<<<<<<< HEAD
 
-=======
->>>>>>> 6797843ca81975052c3d49155c3899a399ee4c26
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Parcelable;
@@ -22,14 +19,10 @@ import android.view.ViewGroup.LayoutParams;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.SimpleAdapter;
-<<<<<<< HEAD
 
 import com.familytouch.R;
 import com.familytouch.control.GridOnClickListener;
 import com.familytouch.data.Constant;
-=======
-import com.familytouch.R;
->>>>>>> 6797843ca81975052c3d49155c3899a399ee4c26
 import com.familytouch.entity.GridEntity;
 
 public class GridViewPager {
@@ -40,12 +33,6 @@ public class GridViewPager {
 	private static int pageNum;
 	
 	private final static int ICONNUMPERPAGE = 8;
-<<<<<<< HEAD
-
-=======
-	private final static String LABKEY = "labelKey";
-	private final static String ICOKEY = "iconKey";
->>>>>>> 6797843ca81975052c3d49155c3899a399ee4c26
 	
 	@SuppressLint("InflateParams")
 	public static View getGridViewPager(Context context, ArrayList<GridEntity> arrayList){
@@ -81,7 +68,6 @@ public class GridViewPager {
 			ArrayList<HashMap<String, Object>> lstItem = new ArrayList<HashMap<String, Object>>();
 			for (int j = 0; j < beanLst.size(); j++) {
 				HashMap<String, Object> map = new HashMap<String, Object>();
-<<<<<<< HEAD
 				map.put(Constant.ICOKEY, beanLst.get(j).getGridIcon());
 				map.put(Constant.LABKEY, context.getString(beanLst.get(j).getGridLabel()));
 				lstItem.add(map);
@@ -91,17 +77,7 @@ public class GridViewPager {
 					new int[] { R.id.grid_item_icon, R.id.grid_item_label });
 			gridViewList.get(i).setAdapter(itemAdapter);
 			gridViewList.get(i).setOnItemClickListener(GridOnClickListener.getInstance(context));
-=======
-				map.put(ICOKEY, beanLst.get(j).getGridIcon());
-				map.put(LABKEY, context.getString(beanLst.get(j).getGridLabel()));
-				lstItem.add(map);
-			}
-			SimpleAdapter itemAdapter = new SimpleAdapter(context, lstItem,
-					R.layout.grid_item, new String[] { ICOKEY, LABKEY },
-					new int[] { R.id.grid_item_icon, R.id.grid_item_label });
-			gridViewList.get(i).setAdapter(itemAdapter);
-			gridViewList.get(i).setOnItemClickListener(null);
->>>>>>> 6797843ca81975052c3d49155c3899a399ee4c26
+
 		}
 
 		if (modPart != 0) {
@@ -112,21 +88,12 @@ public class GridViewPager {
 			ArrayList<HashMap<String, Object>> lstItem = new ArrayList<HashMap<String, Object>>();
 			for (int j = 0; j < beanLst.size(); j++) {
 				HashMap<String, Object> map = new HashMap<String, Object>();
-<<<<<<< HEAD
 				map.put(Constant.ICOKEY, beanLst.get(j).getGridIcon());
 				map.put(Constant.LABKEY, context.getString(beanLst.get(j).getGridLabel()));
 				lstItem.add(map);
 			}
 			SimpleAdapter itemAdapter = new SimpleAdapter(context, lstItem,
 					R.layout.grid_item, new String[] { Constant.ICOKEY, Constant.LABKEY },
-=======
-				map.put(ICOKEY, beanLst.get(j).getGridIcon());
-				map.put(LABKEY, context.getString(beanLst.get(j).getGridLabel()));
-				lstItem.add(map);
-			}
-			SimpleAdapter itemAdapter = new SimpleAdapter(context, lstItem,
-					R.layout.grid_item, new String[] { ICOKEY, LABKEY },
->>>>>>> 6797843ca81975052c3d49155c3899a399ee4c26
 					new int[] { R.id.grid_item_icon, R.id.grid_item_label });
 			gridViewList.get(gridViewList.size() - 1).setAdapter(itemAdapter);
 			gridViewList.get(gridViewList.size() - 1).setOnItemClickListener(

@@ -184,13 +184,10 @@ public class HomePage extends Activity {
 		ArrayList<GridEntity> arrayList = GridEntityGenerater.generate(Constant.menuImg,
 				Constant.menuLab);
 		getLayoutInflater();
-<<<<<<< HEAD
+
 //		mMainPager = GridViewPager.getGridViewPager(getApplicationContext(),
 //				arrayList);
 		mMainPager = GridViewPager.getGridViewPager(HomePage.this, arrayList);
-=======
-		mMainPager = GridViewPager.getGridViewPager(getApplicationContext(),
-				arrayList);
->>>>>>> 6797843ca81975052c3d49155c3899a399ee4c26
+
 	}
 }

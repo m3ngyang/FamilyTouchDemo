@@ -1,6 +1,7 @@
-package com.familytouch.gallery;
+package com.familytouch.ui;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -11,7 +12,8 @@ import com.familytouch.R;
 import com.familytouch.control.GalleryImageAdapter;
 import com.familytouch.data.Constant;
 
-public class GroupbuyGalleryActivity extends Activity {
+@SuppressWarnings("deprecation")
+public class GalleryActivity extends Activity {
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +21,10 @@ public class GroupbuyGalleryActivity extends Activity {
 		setContentView(R.layout.aty_gallerypage);
 		
 		Gallery gallery = (Gallery) findViewById(R.id.gallery);
-		gallery.setAdapter(new GalleryImageAdapter(getApplicationContext(), Constant.IMG_GROUPBUY));
+		Intent intent = getIntent();
+		int[] imgList = intent.getIntArrayExtra(Constant.GALLERYKEY);
+
+		gallery.setAdapter(new GalleryImageAdapter(getApplicationContext(), imgList));
 		gallery.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
 			@Override
@@ -27,8 +32,6 @@ public class GroupbuyGalleryActivity extends Activity {
 				Toast.makeText(getApplicationContext(), "Clicked.", Toast.LENGTH_SHORT).show();
 			}
 			
-		});
-		
+		});	
 	}
-	
 }

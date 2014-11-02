@@ -7,6 +7,7 @@ import android.widget.BaseAdapter;
 import android.widget.Gallery;
 import android.widget.ImageView;
 
+@SuppressWarnings("deprecation")
 public class GalleryImageAdapter extends BaseAdapter {
 	private Context context;
 	private int[] imgs;

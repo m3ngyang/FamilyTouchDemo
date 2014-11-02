@@ -9,59 +9,26 @@
     
     <LinearLayout android:id="@+id/layoutTop"
         android:layout_width="match_parent"  
-	    android:layout_height="78dp"
+	    android:layout_height="60dp"
 	    android:orientation="vertical"
 	    android:background="@drawable/top" >
     </LinearLayout>
     
     <LinearLayout android:id="@+id/layoutMid"
         android:layout_width="match_parent"
-    	android:layout_height="386dp" 
+    	android:layout_height="467dp" 
     	android:orientation="horizontal"
     	android:background="#00000000" >
     	<fragment
 	        android:id="@+id/titles"
-	        android:layout_width="171dp"
+	        android:layout_width="92dp"
 	        android:layout_height="match_parent"
 	        class="com.familytouch.ui.HomePage$TitleFragment" />
 	    <FrameLayout
 	        android:id="@+id/details"
-	        android:layout_width="853dp"
+	        android:layout_width="932dp"
 	        android:layout_height="match_parent"
 	        android:background="#00000000" >
     </FrameLayout>
-    </LinearLayout>
-    
-    <LinearLayout android:id="@+id/layoutBottom"
-        android:layout_width="match_parent"
-    	android:layout_height="63dp"
-    	android:orientation="horizontal"
-    	android:background="@drawable/bottom" >
-    	<Button android:id="@+id/btnReturn"
-    	    android:layout_width="170dp"
-    		android:layout_height="63dp"
-    		android:background="#00000000" />
-    	<Button android:id="@+id/btnHangout"
-    	    android:layout_width="170dp"
-    		android:layout_height="63dp"
-    		android:background="#00000000" />
-    	<Button android:id="@+id/btnDelivery"
-    	    android:layout_width="170dp"
-    		android:layout_height="63dp"
-    		android:background="#00000000" />
-    	<Button android:id="@+id/btnService"
-    	    android:layout_width="170dp"
-    		android:layout_height="63dp"
-    		android:background="#00000000" />
-    	<Button android:id="@+id/btnBuy"
-    	    android:layout_width="170dp"
-    		android:layout_height="63dp"
-    		android:background="#00000000" />
-    	<Button android:id="@+id/btnBank"
-    	    android:layout_width="170dp"
-    		android:layout_height="63dp"
-    		android:background="#00000000" />
-    </LinearLayout>
-    
-
+    </LinearLayout> 
 </LinearLayout>

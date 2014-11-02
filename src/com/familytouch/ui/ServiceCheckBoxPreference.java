@@ -5,7 +5,7 @@ import java.util.List;
 
 import com.familytouch.R;
 import com.familytouch.R.xml;
-import com.familytouch.data.ServiceJsonObject;
+import com.familytouch.entity.ServiceJsonObject;
 import com.familytouch.util.JsonUtil;
 
 import android.os.Bundle;

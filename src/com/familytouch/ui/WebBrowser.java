@@ -1,3 +1,6 @@
+/**
+ * @author Kaffa
+ */
 package com.familytouch.ui;
 
 import com.familytouch.R;

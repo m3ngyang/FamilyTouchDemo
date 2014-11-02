@@ -7,8 +7,8 @@
     <uses-sdk
         android:minSdkVersion="14"
         android:targetSdkVersion="18" />
-    
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -23,9 +23,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.familytouch.ui.HomePage"></activity>
-        <activity android:name="com.familytouch.ui.ServiceCheckBoxPreference"></activity>
-        <activity android:name="com.familytouch.ui.WebBrowser"></activity>
+        <activity android:name=".ui.HomePage" ></activity>
+        <activity android:name=".ui.WebBrowser" ></activity>
+        <activity android:name=".ui.NewHomePage" ></activity>
+        <activity android:name="com.familytouch.gallery.GalleryActivity" ></activity>
+        <activity android:name="com.familytouch.gallery.NearbyGalleryActivity" ></activity>
+        <activity android:name="com.familytouch.gallery.GroupbuyGalleryActivity" ></activity>
+        <activity android:name="com.familytouch.gallery.CourseGalleryActivity" ></activity>
+        <activity android:name="com.familytouch.gallery.PetGalleryActivity" ></activity>
     </application>
 
 </manifest>

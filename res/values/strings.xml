@@ -42,5 +42,37 @@
     <string name="mobiledevice">移动设备</string>
     <string name="setting">设置</string>
     <string name="plus">更多</string>
-
+    
+    <!-- 送上门 -->
+    <string name="water">水</string>
+    <string name="rice">米</string>
+    <string name="oil">油</string>
+    <string name="milk">奶</string>
+    <string name="egg">鸡蛋</string>
+    <string name="cake">蛋糕</string>
+    <string name="fruit">水果</string>
+    <string name="flower">鲜花</string>
+    
+    <!-- 叫服务 -->
+    <string name="tutor">家教</string>
+    <string name="aircondition">空调清洗</string>
+    <string name="computer">电脑维修</string>
+    <string name="car">爱车</string>
+    <string name="chang">X场</string>
+    
+    <!-- 买东西 -->
+    <string name="suning">苏宁易购</string>
+    <string name="juhuasuan">聚划算</string>
+    <string name="jiuxian">酒仙网</string>
+    <string name="guomei">国美在线</string>
+    <string name="jingdong">京东商城</string>
+    <string name="fanke">凡客诚品</string>
+    <string name="lefeng">乐蜂网</string>
+    
+    <!-- theoldservice -->
+    <string name="basicservice">基础服务</string>
+    <string name="massage">中医推拿</string>
+    <string name="pe">上门体检</string>
+    <string name="aunt">找阿姨</string>
+    
 </resources>

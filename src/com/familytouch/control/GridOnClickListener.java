@@ -3,41 +3,74 @@
  */
 package com.familytouch.control;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
 import com.familytouch.R;
-import com.familytouch.entity.ServiceJsonObject;
-import com.familytouch.ui.WebBrowser;
-import com.familytouch.util.JsonUtil;
+import com.familytouch.data.Constant;
+import com.familytouch.view.SquareMenu;
 
-import android.app.Activity;
-import android.app.AlertDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 
 public class GridOnClickListener implements OnItemClickListener {
-	private Activity activity;
+	private static GridOnClickListener instance = null;
+	private Context context;
 	private Intent intent;
-	
-	JsonUtil jsonUtil;
-	final String FILE_NAME = "test.json";
-	List<ServiceJsonObject> serviceList;
-	ArrayList<ServiceJsonObject> serviceAddList = new ArrayList<ServiceJsonObject>();
-	AlertDialog.Builder dialogBuilder = null;
 
-	
-	public GridOnClickListener(Activity act) {
-		activity = act;
+	public GridOnClickListener(Context context) {
+		this.context = context;
+	}
+
+	public static GridOnClickListener getInstance(Context context) {
+		if (instance == null) {
+			instance = new GridOnClickListener(context);
+		}
+		return instance;
 	}
 
 	@Override
 	public void onItemClick(AdapterView<?> parent, View view, int position,
 			long rowid) {
 		// TODO Auto-generated method stub
-	}
+		@SuppressWarnings("unchecked")
+		HashMap<String, Object> itemMap = (HashMap<String, Object>) parent
+				.getItemAtPosition(position);
+		int img = (Integer) itemMap.get(Constant.ICOKEY);
+		switch (img) {
+		case R.drawable.deliver:
+			intent = new Intent(context, SquareMenu.class);
+			intent.putExtra(Constant.ICOLISTKEY, Constant.deliveryImg);
+			intent.putExtra(Constant.LABLISTKEY, Constant.deliveryLab);
+			context.startActivity(intent);
+			break;
 
+		case R.drawable.callservice:
+			intent = new Intent(context, SquareMenu.class);
+			intent.putExtra(Constant.ICOLISTKEY, Constant.callServiceImg);
+			intent.putExtra(Constant.LABLISTKEY, Constant.callServiceLab);
+			context.startActivity(intent);
+			break;
+
+		case R.drawable.buy:
+			intent = new Intent(context, SquareMenu.class);
+			intent.putExtra(Constant.ICOLISTKEY, Constant.buyImg);
+			intent.putExtra(Constant.LABLISTKEY, Constant.buyLab);
+			context.startActivity(intent);
+			break;
+
+		case R.drawable.theoldservice:
+			intent = new Intent(context, SquareMenu.class);
+			intent.putExtra(Constant.ICOLISTKEY, Constant.oldserviceImg);
+			intent.putExtra(Constant.LABLISTKEY, Constant.oldserviceLab);
+			context.startActivity(intent);
+			break;
+
+		default:
+			break;
+		}
+
+	}
 }

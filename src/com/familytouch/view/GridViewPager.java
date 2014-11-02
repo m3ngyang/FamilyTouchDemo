@@ -5,6 +5,7 @@ package com.familytouch.view;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Parcelable;
@@ -18,7 +19,10 @@ import android.view.ViewGroup.LayoutParams;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.SimpleAdapter;
+
 import com.familytouch.R;
+import com.familytouch.control.GridOnClickListener;
+import com.familytouch.data.Constant;
 import com.familytouch.entity.GridEntity;
 
 public class GridViewPager {
@@ -29,8 +33,7 @@ public class GridViewPager {
 	private static int pageNum;
 	
 	private final static int ICONNUMPERPAGE = 8;
-	private final static String LABKEY = "labelKey";
-	private final static String ICOKEY = "iconKey";
+
 	
 	@SuppressLint("InflateParams")
 	public static View getGridViewPager(Context context, ArrayList<GridEntity> arrayList){
@@ -66,15 +69,15 @@ public class GridViewPager {
 			ArrayList<HashMap<String, Object>> lstItem = new ArrayList<HashMap<String, Object>>();
 			for (int j = 0; j < beanLst.size(); j++) {
 				HashMap<String, Object> map = new HashMap<String, Object>();
-				map.put(ICOKEY, beanLst.get(j).getGridIcon());
-				map.put(LABKEY, context.getString(beanLst.get(j).getGridLabel()));
+				map.put(Constant.ICOKEY, beanLst.get(j).getGridIcon());
+				map.put(Constant.LABKEY, context.getString(beanLst.get(j).getGridLabel()));
 				lstItem.add(map);
 			}
 			SimpleAdapter itemAdapter = new SimpleAdapter(context, lstItem,
-					R.layout.grid_item, new String[] { ICOKEY, LABKEY },
+					R.layout.grid_item, new String[] { Constant.ICOKEY, Constant.LABKEY },
 					new int[] { R.id.grid_item_icon, R.id.grid_item_label });
 			gridViewList.get(i).setAdapter(itemAdapter);
-			gridViewList.get(i).setOnItemClickListener(null);
+			gridViewList.get(i).setOnItemClickListener(GridOnClickListener.getInstance(context));
 		}
 
 		if (modPart != 0) {
@@ -85,12 +88,12 @@ public class GridViewPager {
 			ArrayList<HashMap<String, Object>> lstItem = new ArrayList<HashMap<String, Object>>();
 			for (int j = 0; j < beanLst.size(); j++) {
 				HashMap<String, Object> map = new HashMap<String, Object>();
-				map.put(ICOKEY, beanLst.get(j).getGridIcon());
-				map.put(LABKEY, context.getString(beanLst.get(j).getGridLabel()));
+				map.put(Constant.ICOKEY, beanLst.get(j).getGridIcon());
+				map.put(Constant.LABKEY, context.getString(beanLst.get(j).getGridLabel()));
 				lstItem.add(map);
 			}
 			SimpleAdapter itemAdapter = new SimpleAdapter(context, lstItem,
-					R.layout.grid_item, new String[] { ICOKEY, LABKEY },
+					R.layout.grid_item, new String[] { Constant.ICOKEY, Constant.LABKEY },
 					new int[] { R.id.grid_item_icon, R.id.grid_item_label });
 			gridViewList.get(gridViewList.size() - 1).setAdapter(itemAdapter);
 			gridViewList.get(gridViewList.size() - 1).setOnItemClickListener(

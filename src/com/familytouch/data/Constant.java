@@ -82,7 +82,7 @@ public class Constant {
 			R.string.basicservice, R.string.massage, R.string.pe, R.string.aunt };
 
 	public static final int[] IMG_FRUIT = new int[] { R.drawable.cherry,
-			R.drawable.blueberry };
+			R.drawable.blueberry, R.drawable.orange, R.drawable.wulian };
 	public static final int[] IMG_NEARBYACTIVITY = new int[] {
 			R.drawable.outing, R.drawable.riding };
 	public static final int[] IMG_GROUPBUY = new int[] { R.drawable.fruitgift,

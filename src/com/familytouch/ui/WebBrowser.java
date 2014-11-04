@@ -4,6 +4,7 @@
 package com.familytouch.ui;
 
 import com.familytouch.R;
+import com.familytouch.data.Constant;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -21,11 +22,6 @@ public class WebBrowser extends Activity {
 	WebSettings cmWebSettings;
 	String urlString;
 	
-//	public WebBrowser(String url) {
-//		// TODO Auto-generated constructor stub
-//		this.urlString = url;
-//	}
-	
 	@SuppressLint("SetJavaScriptEnabled")
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +29,7 @@ public class WebBrowser extends Activity {
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_webbrowser);
 		intent = getIntent();
-		urlString = intent.getStringExtra("url");
+		urlString = intent.getStringExtra(Constant.WEBURL);
 		browserView = (WebView) findViewById(R.id.webbrowser);
 		browserView.loadUrl(urlString);
 		browserView.setWebViewClient(new WebViewClient());

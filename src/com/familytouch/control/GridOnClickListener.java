@@ -8,6 +8,7 @@ import java.util.HashMap;
 import com.familytouch.R;
 import com.familytouch.data.Constant;
 import com.familytouch.ui.GalleryActivity;
+import com.familytouch.ui.WebBrowser;
 import com.familytouch.view.SquareMenu;
 
 import android.content.Context;
@@ -99,6 +100,18 @@ public class GridOnClickListener implements OnItemClickListener {
 			context.startActivity(intent);
 			break;
 			
+		case R.drawable.fastfood:
+			intent = new Intent(context,WebBrowser.class);
+			intent.putExtra(Constant.WEBURL, "http://v5.ele.me");
+			context.startActivity(intent);
+			break;
+			
+		case R.drawable.ticket:
+			intent = new Intent(context,WebBrowser.class);
+			intent.putExtra(Constant.WEBURL, "http://www.gewara.com/");
+			context.startActivity(intent);
+			break;
+		
 		default:
 			break;
 		}

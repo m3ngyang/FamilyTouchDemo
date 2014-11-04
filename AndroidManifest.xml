@@ -36,11 +36,6 @@
             android:theme="@style/SquareMenu">
         </activity>
         <activity android:name="com.familytouch.ui.GalleryActivity" ></activity>
-        <activity android:name=".gallery.NearbyGalleryActivity" ></activity>
-        <activity android:name=".gallery.GroupbuyGalleryActivity" ></activity>
-        <activity android:name=".gallery.CourseGalleryActivity" ></activity>
-        <activity android:name=".gallery.PetGalleryActivity" ></activity>
-        <activity android:name=".gallery.FruitGalleryActivity"></activity>
     </application>
 
 </manifest>

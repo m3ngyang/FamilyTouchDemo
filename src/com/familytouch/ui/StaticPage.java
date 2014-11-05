@@ -6,7 +6,6 @@ import com.familytouch.data.Constant;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.Layout;
 import android.widget.LinearLayout;
 
 public class StaticPage extends Activity {

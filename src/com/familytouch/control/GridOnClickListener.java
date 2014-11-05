@@ -163,7 +163,7 @@ public class GridOnClickListener implements OnItemClickListener {
 
 		case R.drawable.amazon:// 亚马逊
 			intent = new Intent(context, WebBrowser.class);
-			intent.putExtra(Constant.WEBURL, "www.amazon.cn");
+			intent.putExtra(Constant.WEBURL, "http://www.amazon.cn/");
 			context.startActivity(intent);
 			break;
 

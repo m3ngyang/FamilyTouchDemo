@@ -14,7 +14,10 @@ public class Constant {
 	public static final String ICOLISTKEY = "iconListKey";
 	
 	public static final String GALLERYKEY = "galleryKey";
-
+	public static final String STATICPAGEKEY = "staticPageKey";
+	
+	public static final String WEBURL = "webURL";
+	
 	public static final int[] menuImg = new int[] { R.drawable.nearby,
 			R.drawable.fastfood, R.drawable.express, R.drawable.taxi,
 			R.drawable.ticket, R.drawable.travel, R.drawable.pay,
@@ -27,7 +30,7 @@ public class Constant {
 
 			R.drawable.groupbuy, R.drawable.parentchildren,
 			R.drawable.property, R.drawable.smartmedicare,
-			R.drawable.smarthouse, R.drawable.bank, R.drawable.pet,
+			R.drawable.smarthouse, R.drawable.bank, R.drawable.pet, R.drawable.finance,
 
 			R.drawable.numberone, R.drawable.amazon, R.drawable.qiqi,
 			R.drawable.guangguang, R.drawable.mobiledevice, R.drawable.setting,
@@ -44,7 +47,7 @@ public class Constant {
 
 			R.string.groupbuy, R.string.parentchildren, R.string.property,
 			R.string.smartmedicare, R.string.smarthouse, R.string.bank,
-			R.string.pet,
+			R.string.pet, R.string.finance,
 
 			R.string.numberone, R.string.amazon, R.string.qiqi,
 			R.string.guangguang, R.string.mobiledevice, R.string.setting,
@@ -84,8 +87,10 @@ public class Constant {
 	public static final int[] IMG_FRUIT = new int[] { R.drawable.cherry,
 			R.drawable.blueberry, R.drawable.orange, R.drawable.wulian };
 	public static final int[] IMG_NEARBYACTIVITY = new int[] {
-			R.drawable.outing, R.drawable.riding };
-	public static final int[] IMG_GROUPBUY = new int[] { R.drawable.fruitgift,
+			R.drawable.outing, R.drawable.riding, R.drawable.golf, R.drawable.camera };
+//	public static final int[] IMG_COMMUNITYBUY = new int[] {
+//		R.drawable.outing, R.drawable.riding };
+	public static final int[] IMG_COMMUNITYBUY = new int[] { R.drawable.fruitgift,
 			R.drawable.coffee };
 	public static final int[] IMG_PARENTCHILDREN = new int[] {
 			R.drawable.english, R.drawable.swim };

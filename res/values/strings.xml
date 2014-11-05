@@ -35,7 +35,7 @@
     <string name="pet">宠物</string>
     <string name="finance">理财</string>
     
-    <string name="numberone">1号点</string>
+    <string name="numberone">1号店</string>
     <string name="amazon">亚马逊</string>
     <string name="qiqi">美味七七</string>
     <string name="guangguang">逛逛</string>
@@ -58,7 +58,7 @@
     <string name="aircondition">空调清洗</string>
     <string name="computer">电脑维修</string>
     <string name="car">爱车</string>
-    <string name="chang">X场</string>
+    <string name="chang">搬场</string>
     
     <!-- 买东西 -->
     <string name="suning">苏宁易购</string>

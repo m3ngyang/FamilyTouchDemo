@@ -27,7 +27,7 @@ public class WebBrowser extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
-		setContentView(R.layout.activity_webbrowser);
+		setContentView(R.layout.aty_webpage);
 		intent = getIntent();
 		urlString = intent.getStringExtra(Constant.WEBURL);
 		browserView = (WebView) findViewById(R.id.webbrowser);

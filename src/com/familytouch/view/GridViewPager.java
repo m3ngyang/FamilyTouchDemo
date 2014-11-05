@@ -106,7 +106,7 @@ public class GridViewPager {
 
 		for (int i = 0; i < mIndicator.length; i++) {
 			ImageView pointImageView = new ImageView(context);
-			pointImageView.setLayoutParams(new LayoutParams(12, 12));
+			pointImageView.setLayoutParams(new LayoutParams(20, 10));//TODO
 			pointImageView.setPadding(10, 0, 10, 0);
 			mIndicator[i] = pointImageView;
 			if (i == 0) {

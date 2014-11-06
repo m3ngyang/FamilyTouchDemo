@@ -14,11 +14,13 @@ import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.familytouch.R;
+import com.familytouch.control.SearchBtnOnClickListener;
 import com.familytouch.control.TitleArrayAdapter;
 import com.familytouch.data.Constant;
 import com.familytouch.entity.GridEntity;
@@ -188,6 +190,7 @@ public class HomePage extends Activity {
 //		mMainPager = GridViewPager.getGridViewPager(getApplicationContext(),
 //				arrayList);
 		mMainPager = GridViewPager.getGridViewPager(HomePage.this, arrayList);
-
+		ImageButton searchBtn = (ImageButton) findViewById(R.id.btn_search);
+		searchBtn.setOnClickListener(new SearchBtnOnClickListener(this));
 	}
 }

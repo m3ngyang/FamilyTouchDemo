@@ -36,9 +36,13 @@
             android:name=".view.SquareMenu"
             android:theme="@style/SquareMenu" >
         </activity>
-        <activity android:name="com.familytouch.ui.GalleryActivity" >
+        <activity android:name=".ui.GalleryActivity" >
         </activity>
-        <activity android:name="com.familytouch.ui.StaticPage">
+        <activity android:name=".ui.StaticPage" >
+        </activity>
+        <activity
+            android:name="com.familytouch.ui.SearchPage"
+            android:label="@string/title_activity_search_page" >
         </activity>
     </application>
 

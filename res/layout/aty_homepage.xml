@@ -5,14 +5,8 @@
     android:orientation="vertical"
     android:background="@drawable/bg" >
     
-    <!-- 测试设备物理规格1024*600，除去状态栏及控制栏后屏幕实际像素为1024*527 -->
-    
-    <LinearLayout android:id="@+id/layoutTop"
-        android:layout_width="match_parent"  
-	    android:layout_height="60dp"
-	    android:orientation="vertical"
-	    android:background="@drawable/top" >
-    </LinearLayout>
+    <!-- 测试设备物理规格1024*600，除去状态栏及控制栏后屏幕实际像素为1024*527 -->  
+    <include layout="@layout/title_bar"/>
     
     <LinearLayout android:id="@+id/layoutMid"
         android:layout_width="match_parent"

@@ -4,12 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
     
-    <LinearLayout android:id="@+id/layoutTop"
-        android:layout_width="match_parent"  
-	    android:layout_height="60dp"
-	    android:orientation="vertical"
-	    android:background="@drawable/top" >
-    </LinearLayout>
+    <include layout="@layout/title_bar"/>
     <WebView 
 	android:id="@+id/webbrowser"
 	android:layout_width="match_parent"

@@ -97,7 +97,7 @@ public class GridViewPager {
 					new int[] { R.id.grid_item_icon, R.id.grid_item_label });
 			gridViewList.get(gridViewList.size() - 1).setAdapter(itemAdapter);
 			gridViewList.get(gridViewList.size() - 1).setOnItemClickListener(
-					null);
+					GridOnClickListener.getInstance(context));
 		}
 		
 		pointViewGroup = (ViewGroup) mMainPager.findViewById(R.id.indicators);

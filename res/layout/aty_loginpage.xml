@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/bg_pure" >
+    
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="107dp" >
+    </LinearLayout>
+    <LinearLayout 
+        android:layout_width="104dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:background="@drawable/loginphoto"
+        android:layout_marginBottom="15dp" >
+    </LinearLayout>
+    <LinearLayout 
+        android:layout_width="195dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center"
+        android:background="@drawable/loginlabel"
+        android:layout_marginBottom="30dp" >
+    </LinearLayout>
+    <LinearLayout 
+        android:layout_width="266dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:background="@drawable/logineditbox"
+        android:layout_marginBottom="16dp" >
+        <EditText 
+            android:layout_width="262dp"
+        	android:layout_height="38dp"
+        	android:layout_marginLeft="5dp"
+        	android:layout_marginTop="2dp"
+        	android:background="@null" />
+    </LinearLayout>
+    <LinearLayout 
+        android:layout_width="266dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:background="@drawable/logineditbox"
+        android:layout_marginBottom="10dp" >
+        <EditText 
+            android:layout_width="262dp"
+        	android:layout_height="38dp"
+        	android:layout_marginLeft="5dp"
+        	android:layout_marginTop="2dp"
+        	android:background="@null" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="266dp"
+        android:layout_height="16dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="16dp"
+        android:orientation="horizontal" >
+        <CheckBox android:id="@+id/chkboxremember"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/MyCheckBox"
+            android:layout_marginLeft="15dp"
+            android:text="  记住密码"
+            android:textSize="11sp"
+            android:textColor="#FFF" />
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="120dp"
+            android:text="忘记密码？"
+            android:textSize="11sp"
+            android:textColor="#FFF" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="214dp"
+        android:layout_height="28dp"
+        android:layout_gravity="center"
+        android:orientation="horizontal" >
+        <Button android:id="@+id/btnlogin"
+            android:layout_width="106dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/btn_login"
+            android:layout_marginRight="2dp" />
+        <Button android:id="@+id/btncreate"
+            android:layout_width="106dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/btn_create" />
+    </LinearLayout>
+    
+
+</LinearLayout>

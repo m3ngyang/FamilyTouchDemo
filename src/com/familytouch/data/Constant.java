@@ -15,7 +15,6 @@ public class Constant {
 	
 	public static final String GALLERYKEY = "galleryKey";
 	public static final String STATICPAGEKEY = "staticPageKey";
-	
 	public static final String WEBURL = "webURL";
 	
 	public static final int[] menuImg = new int[] { R.drawable.nearby,

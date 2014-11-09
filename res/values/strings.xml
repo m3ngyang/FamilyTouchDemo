@@ -6,7 +6,7 @@
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_new_home_page">NewHomePage</string>
     <string name="teststring">test</string>
-    
+
     <!-- 一级图标 -->
     <string name="nearby">周边</string>
     <string name="fastfood">送餐</string>
@@ -16,7 +16,6 @@
     <string name="travel">出行</string>
     <string name="pay">缴费</string>
     <string name="householding">家政</string>
-    
     <string name="nearbycenter">邻里中心</string>
     <string name="nearbyactivity">邻里活动</string>
     <string name="communitybuy">社区团购</string>
@@ -25,7 +24,6 @@
     <string name="deliver">送上门</string>
     <string name="buy">买东西</string>
     <string name="theoldservice">老人服务</string>
-    
     <string name="groupbuy">团购</string>
     <string name="parentchildren">亲子</string>
     <string name="property">物业</string>
@@ -34,7 +32,6 @@
     <string name="bank">自助银行</string>
     <string name="pet">宠物</string>
     <string name="finance">理财</string>
-    
     <string name="numberone">1号店</string>
     <string name="amazon">亚马逊</string>
     <string name="qiqi">美味七七</string>
@@ -42,7 +39,7 @@
     <string name="mobiledevice">移动设备</string>
     <string name="setting">设置</string>
     <string name="plus">更多</string>
-    
+
     <!-- 送上门 -->
     <string name="water">水</string>
     <string name="rice">米</string>
@@ -52,14 +49,14 @@
     <string name="cake">蛋糕</string>
     <string name="fruit">水果</string>
     <string name="flower">鲜花</string>
-    
+
     <!-- 叫服务 -->
     <string name="tutor">家教</string>
     <string name="aircondition">空调清洗</string>
     <string name="computer">电脑维修</string>
     <string name="car">爱车</string>
     <string name="chang">搬场</string>
-    
+
     <!-- 买东西 -->
     <string name="suning">苏宁易购</string>
     <string name="juhuasuan">聚划算</string>
@@ -68,11 +65,12 @@
     <string name="jingdong">京东商城</string>
     <string name="fanke">凡客诚品</string>
     <string name="lefeng">乐蜂网</string>
-    
+
     <!-- theoldservice -->
     <string name="basicservice">基础服务</string>
     <string name="massage">中医推拿</string>
     <string name="pe">上门体检</string>
     <string name="aunt">找阿姨</string>
-    
+    <string name="title_activity_search_page">SearchPage</string>
+
 </resources>

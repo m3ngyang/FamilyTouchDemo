@@ -72,5 +72,6 @@
     <string name="pe">上门体检</string>
     <string name="aunt">找阿姨</string>
     <string name="title_activity_search_page">SearchPage</string>
+    <string name="title_activity_home_page2">HomePage2</string>
 
 </resources>

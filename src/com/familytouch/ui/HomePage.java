@@ -1,7 +1,9 @@
 package com.familytouch.ui;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -9,19 +11,25 @@ import android.app.AlertDialog;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.app.ListFragment;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.ScrollView;
+import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
 import com.familytouch.R;
+import com.familytouch.control.HomeBtnOnClickListener;
 import com.familytouch.control.SearchBtnOnClickListener;
-import com.familytouch.control.TitleArrayAdapter;
 import com.familytouch.data.Constant;
 import com.familytouch.entity.GridEntity;
 import com.familytouch.util.GridEntityGenerater;
@@ -33,10 +41,13 @@ public class HomePage extends Activity {
 	private final static String BUNDLEINDEX = "bundleIndex";
 	private static View mMainPager;
 
-	private static List<Integer> titleImgIDList;
+	private static List<Map<String, Object>> titleList;
 
-	protected final static String[] TITLES = { "remind", "rank", "mine",
-			"recent", "around" };
+	private final static int[] TITLES = { R.drawable.blank0, R.drawable.remind,
+			R.drawable.rank, R.drawable.mine, R.drawable.recent,
+			R.drawable.blank1, R.drawable.blank2, R.drawable.around };
+
+	public static View curView;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -72,10 +83,9 @@ public class HomePage extends Activity {
 		@Override
 		public void onActivityCreated(Bundle savedInstanceState) {
 			super.onActivityCreated(savedInstanceState);
-			// setListAdapter(new ArrayAdapter<String>(getActivity(),
-			// android.R.layout.simple_list_item_1, TITLES));
-			setListAdapter(new TitleArrayAdapter(getActivity(),
-					R.layout.title_list_item, titleImgIDList));
+			setListAdapter(new SimpleAdapter(getActivity(), titleList,
+					R.layout.title_list_item, new String[] { "img" },
+					new int[] { R.id.btnTitleItem }));
 			View mainView = getActivity().findViewById(R.id.details);
 			mDualPane = (mainView != null)
 					&& (mainView.getVisibility() == View.VISIBLE);
@@ -84,6 +94,8 @@ public class HomePage extends Activity {
 			}
 			if (mDualPane) {
 				getListView().setChoiceMode(ListView.CHOICE_MODE_SINGLE);
+				getListView().setDivider(null); // 去掉listView之间的横线
+				getListView().setSelector(new ColorDrawable(Color.TRANSPARENT));// 去掉选中时的黄色背景
 				showMainViewAt(mCurClickPostion);
 			}
 		}
@@ -144,6 +156,7 @@ public class HomePage extends Activity {
 			return getArguments().getInt(BUNDLEINDEX, 0);
 		}
 
+		@SuppressLint("InflateParams")
 		@Override
 		public View onCreateView(LayoutInflater inflater, ViewGroup container,
 				Bundle savedInstanceState) {
@@ -151,20 +164,27 @@ public class HomePage extends Activity {
 				return null;
 
 			ScrollView scroller = new ScrollView(getActivity());
-			View view1;
+			// View curView;
 			switch (getShownIndex()) {
 			case 0:
-				view1 = mMainPager;
-				return view1;
+				curView = mMainPager;
+				return curView;
+
+			case 1:
+				View noticeView = LayoutInflater.from(getActivity()).inflate(
+						R.layout.layout_notice, null);
+				curView = noticeView;
+				return curView;
+
 			default:
-				//TODO: 其他选项，未做，先用文字代替
+				// TODO: 其他选项，未做，先用文字代替
 				TextView text = new TextView(getActivity());
 				int padding = (int) TypedValue.applyDimension(
 						TypedValue.COMPLEX_UNIT_DIP, 4, getActivity()
 								.getResources().getDisplayMetrics());
 				text.setPadding(padding, padding, padding, padding);
 				scroller.addView(text);
-				text.setText(TITLES[getShownIndex()]);
+				text.setText("developing ...");
 				return scroller;
 			}
 		}
@@ -172,25 +192,23 @@ public class HomePage extends Activity {
 
 	@SuppressLint("InflateParams")
 	public void init() {
-		titleImgIDList = new ArrayList<Integer>();
+		titleList = new ArrayList<Map<String, Object>>();
+		for (int i = 0; i < TITLES.length; i++) {
+			Map<String, Object> map = new HashMap<String, Object>();
+			map.put("img", TITLES[i]);
+			titleList.add(map);
+		}
 
-		titleImgIDList = new ArrayList<Integer>();
-		titleImgIDList.add(R.drawable.remind);
-		titleImgIDList.add(R.drawable.rank);
-		titleImgIDList.add(R.drawable.mine);
-		titleImgIDList.add(R.drawable.recent);
-		titleImgIDList.add(R.drawable.blank1);
-		titleImgIDList.add(R.drawable.blank2);
-		titleImgIDList.add(R.drawable.around);
-
-		ArrayList<GridEntity> arrayList = GridEntityGenerater.generate(Constant.menuImg,
-				Constant.menuLab);
+		ArrayList<GridEntity> arrayList = GridEntityGenerater.generate(
+				Constant.menuImg, Constant.menuLab);
 		getLayoutInflater();
 
-//		mMainPager = GridViewPager.getGridViewPager(getApplicationContext(),
-//				arrayList);
+		// mMainPager = GridViewPager.getGridViewPager(getApplicationContext(),
+		// arrayList);
 		mMainPager = GridViewPager.getGridViewPager(HomePage.this, arrayList);
 		ImageButton searchBtn = (ImageButton) findViewById(R.id.btn_search);
 		searchBtn.setOnClickListener(new SearchBtnOnClickListener(this));
+		ImageButton homeBtn = (ImageButton) findViewById(R.id.btn_home);
+		homeBtn.setOnClickListener(new HomeBtnOnClickListener(this));
 	}
 }

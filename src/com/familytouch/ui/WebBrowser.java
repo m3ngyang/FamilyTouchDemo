@@ -4,6 +4,9 @@
 package com.familytouch.ui;
 
 import com.familytouch.R;
+import com.familytouch.control.BackOnClickLlistener;
+import com.familytouch.control.HomeBtnOnClickListener;
+import com.familytouch.control.SearchBtnOnClickListener;
 import com.familytouch.data.Constant;
 
 import android.annotation.SuppressLint;
@@ -15,6 +18,7 @@ import android.view.Window;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.ImageButton;
 
 public class WebBrowser extends Activity {
 	Intent intent;
@@ -35,6 +39,13 @@ public class WebBrowser extends Activity {
 		browserView.setWebViewClient(new WebViewClient());
 		cmWebSettings = browserView.getSettings();
 		cmWebSettings.setJavaScriptEnabled(true);
+		
+		ImageButton searchBtn = (ImageButton) findViewById(R.id.btn_search);
+		searchBtn.setOnClickListener(new SearchBtnOnClickListener(this));
+		ImageButton homeBtn = (ImageButton)findViewById(R.id.btn_home);
+		homeBtn.setOnClickListener(new HomeBtnOnClickListener(this));
+		ImageButton backBtn = (ImageButton)findViewById(R.id.btn_back);
+		backBtn.setOnClickListener(new BackOnClickLlistener(this));
 	}
 
 	@Override

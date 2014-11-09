@@ -6,10 +6,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Gallery;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.familytouch.R;
+import com.familytouch.control.BackOnClickLlistener;
 import com.familytouch.control.GalleryImageAdapter;
+import com.familytouch.control.HomeBtnOnClickListener;
+import com.familytouch.control.SearchBtnOnClickListener;
 import com.familytouch.data.Constant;
 
 @SuppressWarnings("deprecation")
@@ -33,5 +37,12 @@ public class GalleryActivity extends Activity {
 			}
 			
 		});	
+		
+		ImageButton searchBtn = (ImageButton)findViewById(R.id.btn_search);
+		searchBtn.setOnClickListener(new SearchBtnOnClickListener(this));
+		ImageButton homeBtn = (ImageButton)findViewById(R.id.btn_home);
+		homeBtn.setOnClickListener(new HomeBtnOnClickListener(this));
+		ImageButton backBtn = (ImageButton)findViewById(R.id.btn_back);
+		backBtn.setOnClickListener(new BackOnClickLlistener(this));
 	}
 }

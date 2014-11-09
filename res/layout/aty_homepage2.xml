@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="@drawable/bg">
+    
+    <include layout="@layout/title_bar"/>
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <RelativeLayout 
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+            <ImageButton 
+                android:id="@+id/left_remind"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/remind"/>
+            <ImageButton 
+                android:id="@+id/left_rank"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/left_remind"
+                android:background="@drawable/rank"/>
+            <ImageButton 
+                android:id="@+id/left_mine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/left_rank"
+                android:background="@drawable/mine"/>
+            <ImageButton 
+                android:id="@+id/left_recent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/left_mine"
+                android:background="@drawable/recent"/>
+            
+            <ImageButton 
+                android:id="@+id/left_around"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/around"/>
+        </RelativeLayout>
+        <View 
+            android:id="@+id/mainView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+        
+    </LinearLayout>
+
+</LinearLayout>

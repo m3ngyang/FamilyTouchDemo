@@ -27,12 +27,13 @@ public class Constant {
 			R.drawable.callservice, R.drawable.deliver, R.drawable.buy,
 			R.drawable.theoldservice,
 
-			R.drawable.groupbuy, R.drawable.parentchildren,
+			R.drawable.parentchildren,
 			R.drawable.property, R.drawable.smartmedicare,
-			R.drawable.smarthouse, R.drawable.bank, R.drawable.pet, R.drawable.finance,
+			R.drawable.smarthouse, R.drawable.bank, R.drawable.pet, R.drawable.finance, R.drawable.guangguang,
 
 			R.drawable.numberone, R.drawable.amazon, R.drawable.qiqi,
-			R.drawable.guangguang, R.drawable.mobiledevice, R.drawable.setting,
+			R.drawable.mcdonald, R.drawable.pizzahut, 
+			R.drawable.mobiledevice, R.drawable.setting,
 			R.drawable.plus };
 
 	public static final int[] menuLab = new int[] { R.string.nearby,
@@ -44,12 +45,13 @@ public class Constant {
 			R.string.communitybuy, R.string.drylundry, R.string.callservice,
 			R.string.deliver, R.string.buy, R.string.theoldservice,
 
-			R.string.groupbuy, R.string.parentchildren, R.string.property,
+			R.string.parentchildren, R.string.property,
 			R.string.smartmedicare, R.string.smarthouse, R.string.bank,
-			R.string.pet, R.string.finance,
+			R.string.pet, R.string.finance, R.string.guangguang, 
 
-			R.string.numberone, R.string.amazon, R.string.qiqi,
-			R.string.guangguang, R.string.mobiledevice, R.string.setting,
+			R.string.numberone, R.string.amazon, R.string.qiqi, 
+			R.string.mcdonald, R.string.pizzahut,
+			R.string.mobiledevice, R.string.setting,
 			R.string.plus };
 
 	public static final int[] deliveryImg = new int[] { R.drawable.water,

@@ -47,7 +47,7 @@
             android:label="@string/title_activity_search_page" >
         </activity>
         <activity
-            android:name="com.familytouch.ui.HomePage2"
+            android:name=".ui.HomePage2"
             android:label="@string/title_activity_home_page2" >
         </activity>
     </application>

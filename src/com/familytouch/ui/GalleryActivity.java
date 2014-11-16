@@ -14,6 +14,7 @@ import com.familytouch.control.BackOnClickLlistener;
 import com.familytouch.control.GalleryImageAdapter;
 import com.familytouch.control.HomeBtnOnClickListener;
 import com.familytouch.control.SearchBtnOnClickListener;
+import com.familytouch.control.WholeViewOnTouchListener;
 import com.familytouch.data.Constant;
 
 @SuppressWarnings("deprecation")
@@ -33,6 +34,7 @@ public class GalleryActivity extends Activity {
 
 			@Override
 			public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
+				Constant.touchTime = System.currentTimeMillis();
 				Toast.makeText(getApplicationContext(), "Clicked.", Toast.LENGTH_SHORT).show();
 			}
 			
@@ -44,5 +46,7 @@ public class GalleryActivity extends Activity {
 		homeBtn.setOnClickListener(new HomeBtnOnClickListener(this));
 		ImageButton backBtn = (ImageButton)findViewById(R.id.btn_back);
 		backBtn.setOnClickListener(new BackOnClickLlistener(this));
+		
+		findViewById(R.id.gallerypage).setOnTouchListener(new WholeViewOnTouchListener(this));
 	}
 }

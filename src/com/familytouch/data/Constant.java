@@ -6,6 +6,9 @@ package com.familytouch.data;
 import com.familytouch.R;
 
 public class Constant {
+	
+	public static long touchTime;
+	public static boolean isInSwitcherMode = false;
 
 	public static final String LABKEY = "labelKey";
 	public static final String ICOKEY = "iconKey";
@@ -89,13 +92,13 @@ public class Constant {
 			R.drawable.blueberry, R.drawable.orange, R.drawable.wulian };
 	public static final int[] IMG_NEARBYACTIVITY = new int[] {
 			R.drawable.outing, R.drawable.riding, R.drawable.golf, R.drawable.camera };
-//	public static final int[] IMG_COMMUNITYBUY = new int[] {
-//		R.drawable.outing, R.drawable.riding };
 	public static final int[] IMG_COMMUNITYBUY = new int[] { R.drawable.fruitgift,
 			R.drawable.coffee };
 	public static final int[] IMG_PARENTCHILDREN = new int[] {
 			R.drawable.english, R.drawable.swim };
 	public static final int[] IMG_PET = new int[] { R.drawable.catfood,
 			R.drawable.walkdog };
+	public static final int[] IMG_SWITCHER = new int[] { R.drawable.nenghao,
+		R.drawable.poster };
 
 }

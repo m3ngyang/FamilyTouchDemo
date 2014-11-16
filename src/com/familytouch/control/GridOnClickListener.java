@@ -37,6 +37,7 @@ public class GridOnClickListener implements OnItemClickListener {
 	@Override
 	public void onItemClick(AdapterView<?> parent, View view, int position,
 			long rowid) {
+		Constant.touchTime = System.currentTimeMillis();
 		@SuppressWarnings("unchecked")
 		HashMap<String, Object> itemMap = (HashMap<String, Object>) parent
 				.getItemAtPosition(position);

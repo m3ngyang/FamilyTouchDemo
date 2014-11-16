@@ -8,6 +8,8 @@ import java.util.HashMap;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Parcelable;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
@@ -49,6 +51,7 @@ public class GridViewPager {
 			View page = LayoutInflater.from(context).inflate(R.layout.layout_gridview, null);
 			GridView gridView = (GridView) page.findViewById(R.id.gridview);
 			pageList.add(page);
+			gridView.setSelector(new ColorDrawable(Color.TRANSPARENT));//TODO:取消点击产生黄色背景效果
 			gridViewList.add(gridView);
 		}
 

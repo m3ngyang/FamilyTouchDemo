@@ -42,7 +42,7 @@ public class GridOnClickListener implements OnItemClickListener {
 				.getItemAtPosition(position);
 		int img = (Integer) itemMap.get(Constant.ICOKEY);
 		switch (img) {
-		case R.drawable.fastfood:// 送餐
+		case R.drawable.fastfood:// 送餐 //TODO: gallery
 			intent = new Intent(context, WebBrowser.class);
 			intent.putExtra(Constant.WEBURL, "http://v5.ele.me");
 			context.startActivity(intent);
@@ -50,31 +50,31 @@ public class GridOnClickListener implements OnItemClickListener {
 
 		case R.drawable.express:// 快递
 			intent = new Intent(context, StaticPage.class);
-			intent.putExtra(Constant.STATICPAGEKEY, R.drawable.shentong);
+			intent.putExtra(Constant.STATICPAGEKEY, R.drawable.shunfeng);
 			context.startActivity(intent);
 			break;
 
 		case R.drawable.taxi:// 叫车
 			intent = new Intent(context, StaticPage.class);
-			intent.putExtra(Constant.STATICPAGEKEY, R.drawable.dididache1);
+			intent.putExtra(Constant.STATICPAGEKEY, R.drawable.dididache);
 			context.startActivity(intent);
 			break;
 
 		case R.drawable.ticket:// 票务
-			intent = new Intent(context, WebBrowser.class);
-			intent.putExtra(Constant.WEBURL, "http://www.gewara.com/");
+			intent = new Intent(context, StaticPage.class);
+			intent.putExtra(Constant.STATICPAGEKEY, R.drawable.ticketpage);
 			context.startActivity(intent);
 			break;
 
 		case R.drawable.travel:// 出行
-			intent = new Intent(context, WebBrowser.class);
-			intent.putExtra(Constant.WEBURL, "http://www.qunar.com/");
+			intent = new Intent(context, StaticPage.class);
+			intent.putExtra(Constant.STATICPAGEKEY, R.drawable.qunaerpage);
 			context.startActivity(intent);
 			break;
 
 		case R.drawable.pay:// 缴费
-			intent = new Intent(context, WebBrowser.class);
-			intent.putExtra(Constant.WEBURL, "https://www.alipay.com/");
+			intent = new Intent(context, StaticPage.class);
+			intent.putExtra(Constant.STATICPAGEKEY, R.drawable.alipaypage);
 			context.startActivity(intent);
 			break;
 
@@ -131,14 +131,14 @@ public class GridOnClickListener implements OnItemClickListener {
 			break;
 
 		case R.drawable.smartmedicare:// 智慧医疗
-			intent = new Intent(context, WebBrowser.class);
-			intent.putExtra(Constant.WEBURL, "http://www.quyiyuan.com/");
+			intent = new Intent(context, StaticPage.class);
+			intent.putExtra(Constant.STATICPAGEKEY, R.drawable.smartmedicarepage);
 			context.startActivity(intent);
 			break;
 
 		case R.drawable.bank:// 自助银行
-			intent = new Intent(context, WebBrowser.class);
-			intent.putExtra(Constant.WEBURL, "http://www.lakala.com/");
+			intent = new Intent(context, StaticPage.class);
+			intent.putExtra(Constant.STATICPAGEKEY, R.drawable.lakalapage);
 			context.startActivity(intent);
 			break;
 
@@ -149,39 +149,38 @@ public class GridOnClickListener implements OnItemClickListener {
 			break;
 
 		case R.drawable.finance:// 理财
-			intent = new Intent(context, WebBrowser.class);
-			intent.putExtra(Constant.WEBURL,
-					"http://www.qianxs.com/mrMoney/portal/home.html");
+			intent = new Intent(context, StaticPage.class);
+			intent.putExtra(Constant.STATICPAGEKEY, R.drawable.qianxianshengpage);
+			context.startActivity(intent);
+			break;
+			
+		case R.drawable.guangguang:// 逛逛
+			intent = new Intent(context, StaticPage.class);
+			intent.putExtra(Constant.STATICPAGEKEY, R.drawable.guangguangpage);
 			context.startActivity(intent);
 			break;
 
 		case R.drawable.numberone:// 1号店
-			intent = new Intent(context, WebBrowser.class);
-			intent.putExtra(Constant.WEBURL, "http://www.yhd.com/");
+			intent = new Intent(context, StaticPage.class);
+			intent.putExtra(Constant.STATICPAGEKEY, R.drawable.numberonepage);
 			context.startActivity(intent);
 			break;
 
 		case R.drawable.amazon:// 亚马逊
-			intent = new Intent(context, WebBrowser.class);
-			intent.putExtra(Constant.WEBURL, "http://www.amazon.cn/");
+			intent = new Intent(context, StaticPage.class);
+			intent.putExtra(Constant.STATICPAGEKEY, R.drawable.amazonpage);
 			context.startActivity(intent);
 			break;
 
 		case R.drawable.qiqi:// 美味七七
-			intent = new Intent(context, WebBrowser.class);
-			intent.putExtra(Constant.WEBURL, "http://www.yummy77.com/");
-			context.startActivity(intent);
-			break;
-
-		case R.drawable.guangguang:// 逛逛
-			intent = new Intent(context, WebBrowser.class);
-			intent.putExtra(Constant.WEBURL, "http://www.haitao.com/");
+			intent = new Intent(context, StaticPage.class);
+			intent.putExtra(Constant.STATICPAGEKEY, R.drawable.qiqipage);
 			context.startActivity(intent);
 			break;
 
 		case R.drawable.mobiledevice:// 移动设备
 			intent = new Intent(context, StaticPage.class);
-			intent.putExtra(Constant.STATICPAGEKEY, R.drawable.mobile);
+			intent.putExtra(Constant.STATICPAGEKEY, R.drawable.mobiledevicepage);
 			context.startActivity(intent);
 			break;
 			

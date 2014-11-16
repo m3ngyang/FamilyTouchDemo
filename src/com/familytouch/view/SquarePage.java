@@ -13,6 +13,8 @@ import com.familytouch.entity.GridEntity;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.GridView;
@@ -36,6 +38,7 @@ public class SquarePage {
 		SimpleAdapter itemAdapter = new SimpleAdapter(context, lstItem,
 				R.layout.grid_item, new String[] { Constant.ICOKEY, Constant.LABKEY },
 				new int[] { R.id.grid_item_icon, R.id.grid_item_label });
+		gridView.setSelector(new ColorDrawable(Color.TRANSPARENT));//TODO:取消点击产生黄色背景效果
 		gridView.setAdapter(itemAdapter);
 		gridView.setOnItemClickListener(GridOnClickListener.getInstance(context));
 		return view;

@@ -19,10 +19,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
@@ -30,6 +27,7 @@ import android.widget.TextView;
 import com.familytouch.R;
 import com.familytouch.control.HomeBtnOnClickListener;
 import com.familytouch.control.SearchBtnOnClickListener;
+import com.familytouch.control.WholeViewOnTouchListener;
 import com.familytouch.data.Constant;
 import com.familytouch.entity.GridEntity;
 import com.familytouch.util.GridEntityGenerater;
@@ -210,5 +208,7 @@ public class HomePage extends Activity {
 		searchBtn.setOnClickListener(new SearchBtnOnClickListener(this));
 		ImageButton homeBtn = (ImageButton) findViewById(R.id.btn_home);
 		homeBtn.setOnClickListener(new HomeBtnOnClickListener(this));
+		
+		findViewById(R.id.homepage).setOnTouchListener(new WholeViewOnTouchListener(HomePage.this));
 	}
 }

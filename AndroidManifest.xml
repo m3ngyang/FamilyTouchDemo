@@ -42,6 +42,8 @@
         </activity>
         <activity android:name=".ui.LoginPage" >
         </activity>
+        <activity android:name=".ui.ImageSwitcherPage" >
+        </activity>
         <activity
             android:name=".ui.SearchPage"
             android:label="@string/title_activity_search_page" >
@@ -50,6 +52,8 @@
             android:name="com.familytouch.ui.HomePage2"
             android:label="@string/title_activity_home_page2" >
         </activity>
+        <service android:name="com.familytouch.service.CheckTimeoutService">
+        </service>
     </application>
 
 </manifest>

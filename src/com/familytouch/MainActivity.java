@@ -54,6 +54,6 @@ public class MainActivity extends Activity {
 	}
 
 	public void init() {
-		startActivity(new Intent(MainActivity.this, LoginPage.class));
+		startActivity(new Intent(MainActivity.this, HomePage.class));
 	}
 }

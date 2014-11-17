@@ -60,6 +60,7 @@ public class NoticeCenter {
 				R.layout.notice_listitem, new String[] { ICON, TITL, CONT },
 				new int[] { R.id.listIcon, R.id.listTitl, R.id.listCont });
 		listView.setAdapter(adapter);
+		listView.setDivider(null);
 		return view;
 	}
 }

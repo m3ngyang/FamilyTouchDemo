@@ -90,14 +90,14 @@ public class Constant {
 	public static final int[] IMG_NEARBYACTIVITY = new int[] {
 			R.drawable.outing, R.drawable.riding, R.drawable.golf,
 			R.drawable.camera };
-	// public static final int[] IMG_COMMUNITYBUY = new int[] {
-	// R.drawable.outing, R.drawable.riding };
+	public static final int[] IMG_FASTFOOD = new int[] {
+		R.drawable.fry, R.drawable.boxlunch, R.drawable.noodle, R.drawable.hambuger };
 	public static final int[] IMG_COMMUNITYBUY = new int[] {
-			R.drawable.fruitgift, R.drawable.coffee };
+			R.drawable.flower1, R.drawable.fruitgift, R.drawable.coffee, R.drawable.parentchild };
 	public static final int[] IMG_PARENTCHILDREN = new int[] {
-			R.drawable.english, R.drawable.swim };
-	public static final int[] IMG_PET = new int[] { R.drawable.catfood,
-			R.drawable.walkdog };
+			R.drawable.flower2, R.drawable.english, R.drawable.swim, R.drawable.course };
+	public static final int[] IMG_PET = new int[] { R.drawable.prowalkdog, R.drawable.catfood,
+			R.drawable.walkdog, R.drawable.meirong };
 	public static final int[] IMG_SWITCHER = new int[] { R.drawable.nenghao,
 			R.drawable.poster };
 }

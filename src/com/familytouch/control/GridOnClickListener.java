@@ -5,18 +5,17 @@ package com.familytouch.control;
 
 import java.util.HashMap;
 
-import com.familytouch.R;
-import com.familytouch.data.Constant;
-import com.familytouch.ui.GalleryActivity;
-import com.familytouch.ui.StaticPage;
-import com.familytouch.ui.WebBrowser;
-import com.familytouch.view.SquareMenu;
-
 import android.content.Context;
 import android.content.Intent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
+
+import com.familytouch.R;
+import com.familytouch.data.Constant;
+import com.familytouch.ui.GalleryActivity;
+import com.familytouch.ui.StaticPage;
+import com.familytouch.view.SquareMenu;
 
 public class GridOnClickListener implements OnItemClickListener {
 	private static GridOnClickListener instance = null;
@@ -42,9 +41,9 @@ public class GridOnClickListener implements OnItemClickListener {
 				.getItemAtPosition(position);
 		int img = (Integer) itemMap.get(Constant.ICOKEY);
 		switch (img) {
-		case R.drawable.fastfood:// 送餐 //TODO: gallery
-			intent = new Intent(context, WebBrowser.class);
-			intent.putExtra(Constant.WEBURL, "http://v5.ele.me");
+		case R.drawable.fastfood:// 送餐
+			intent = new Intent(context, GalleryActivity.class);
+			intent.putExtra(Constant.GALLERYKEY, Constant.IMG_FASTFOOD);
 			context.startActivity(intent);
 			break;
 

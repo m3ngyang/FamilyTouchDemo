@@ -17,7 +17,7 @@ import com.familytouch.ui.LoginPage;
 import com.familytouch.ui.ScreenSaverActivity;
 
 public class MainActivity extends Activity {
-	final int timeOut = 6;
+	final int timeOut = 8;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

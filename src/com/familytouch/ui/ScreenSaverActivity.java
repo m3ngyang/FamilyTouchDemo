@@ -1,3 +1,7 @@
+/*
+ * @author yj
+ * refactored by Kaffa
+ */
 package com.familytouch.ui;
 
 import com.familytouch.R;
@@ -28,6 +32,7 @@ public class ScreenSaverActivity extends Activity {
 
 		PowerManager pm = (PowerManager) getSystemService(POWER_SERVICE);
 		mWakeLock = pm.newWakeLock(PowerManager.ACQUIRE_CAUSES_WAKEUP
+				| PowerManager.SCREEN_DIM_WAKE_LOCK
 				| PowerManager.ON_AFTER_RELEASE, "SimpleTimer");
 
 		init();
@@ -36,7 +41,7 @@ public class ScreenSaverActivity extends Activity {
 	@Override
 	protected void onPause() {
 		// TODO Auto-generated method stub
-		mWakeLock.acquire();
+		mWakeLock.release();//must release() after acquire()
 		super.onPause();
 	}
 

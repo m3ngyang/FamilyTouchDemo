@@ -6,7 +6,6 @@ package com.familytouch.ui;
 import com.familytouch.R;
 import com.familytouch.control.BackOnClickLlistener;
 import com.familytouch.control.HomeBtnOnClickListener;
-import com.familytouch.control.WholeViewOnTouchListener;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -26,7 +25,5 @@ public class SearchPage extends Activity {
 
 		ImageButton homeBtn = (ImageButton) findViewById(R.id.btn_home);
 		homeBtn.setOnClickListener(new HomeBtnOnClickListener(this));
-		
-		findViewById(R.id.searchpage).setOnTouchListener(new WholeViewOnTouchListener(this));
 	}
 }

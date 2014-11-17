@@ -27,17 +27,17 @@ import android.widget.TextView;
 import com.familytouch.R;
 import com.familytouch.control.HomeBtnOnClickListener;
 import com.familytouch.control.SearchBtnOnClickListener;
-import com.familytouch.control.WholeViewOnTouchListener;
 import com.familytouch.data.Constant;
 import com.familytouch.entity.GridEntity;
 import com.familytouch.util.GridEntityGenerater;
 import com.familytouch.view.GridViewPager;
+import com.familytouch.view.NoticeCenter;
 
 public class HomePage extends Activity {
 
 	private final static String INSTANCESTATE = "curChoice";
 	private final static String BUNDLEINDEX = "bundleIndex";
-	private static View mMainPager;
+	private static View mMainPager,mNoticeView;
 
 	private static List<Map<String, Object>> titleList;
 
@@ -169,9 +169,10 @@ public class HomePage extends Activity {
 				return curView;
 
 			case 1:
-				View noticeView = LayoutInflater.from(getActivity()).inflate(
-						R.layout.layout_notice, null);
-				curView = noticeView;
+//				View noticeView = LayoutInflater.from(getActivity()).inflate(
+//						R.layout.layout_notice, null);
+//				curView = noticeView;
+				curView = mNoticeView;
 				return curView;
 
 			default:
@@ -209,6 +210,6 @@ public class HomePage extends Activity {
 		ImageButton homeBtn = (ImageButton) findViewById(R.id.btn_home);
 		homeBtn.setOnClickListener(new HomeBtnOnClickListener(this));
 		
-		findViewById(R.id.homepage).setOnTouchListener(new WholeViewOnTouchListener(HomePage.this));
+		mNoticeView = NoticeCenter.getNoticeCenter(this);
 	}
 }

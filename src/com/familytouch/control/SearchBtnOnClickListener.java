@@ -3,7 +3,6 @@
  */
 package com.familytouch.control;
 
-import com.familytouch.data.Constant;
 import com.familytouch.ui.SearchPage;
 
 import android.app.Activity;
@@ -23,7 +22,6 @@ public class SearchBtnOnClickListener implements OnClickListener {
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
 		Log.i("debug","listening");
-		Constant.touchTime = System.currentTimeMillis();
 		activity.startActivity(new Intent(activity,SearchPage.class));
 	}
 }

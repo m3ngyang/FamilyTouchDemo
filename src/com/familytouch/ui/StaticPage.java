@@ -4,7 +4,6 @@ import com.familytouch.R;
 import com.familytouch.control.BackOnClickLlistener;
 import com.familytouch.control.HomeBtnOnClickListener;
 import com.familytouch.control.SearchBtnOnClickListener;
-import com.familytouch.control.WholeViewOnTouchListener;
 import com.familytouch.data.Constant;
 
 import android.app.Activity;
@@ -33,8 +32,6 @@ public class StaticPage extends Activity {
 		homeBtn.setOnClickListener(new HomeBtnOnClickListener(this));
 		ImageButton backBtn = (ImageButton)findViewById(R.id.btn_back);
 		backBtn.setOnClickListener(new BackOnClickLlistener(this));
-		
-		findViewById(R.id.staticpage).setOnTouchListener(new WholeViewOnTouchListener(this));
 	}
 	
 }

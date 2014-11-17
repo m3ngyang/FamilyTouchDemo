@@ -75,5 +75,8 @@
     <string name="aunt">找阿姨</string>
     <string name="title_activity_search_page">SearchPage</string>
     <string name="title_activity_home_page2">HomePage2</string>
+    <string name="title_activity_notiice_center">NotiiceCenter</string>
+    <string name="title_activity_notice_list">NoticeList</string>
+    <string name="title_activity_screen_saver">ScreenSaverActivity</string>
 
 </resources>

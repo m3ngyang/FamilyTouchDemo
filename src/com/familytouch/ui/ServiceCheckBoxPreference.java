@@ -31,7 +31,7 @@ public class ServiceCheckBoxPreference extends PreferenceActivity {
 		jsonUtil = new JsonUtil(getApplicationContext());
 		if(!jsonUtil.isJsonExist(FILE_NAME)){
 			jsonUtil.connnectAndWriteJson(
-					"http://202.120.40.111:8080/smartcity-server/rest/com.familytouch.service/list", FILE_NAME);
+					"http://202.120.40.111:8080/smartcity-server/rest/service/list", FILE_NAME);
 		}
 		serviceList = jsonUtil.readJson(FILE_NAME);
 		

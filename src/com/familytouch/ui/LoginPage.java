@@ -7,8 +7,6 @@ import android.view.View;
 import android.widget.Button;
 
 import com.familytouch.R;
-import com.familytouch.control.WholeViewOnTouchListener;
-import com.familytouch.data.Constant;
 
 public class LoginPage extends Activity{
 	
@@ -22,13 +20,10 @@ public class LoginPage extends Activity{
 			
 			@Override
 			public void onClick(View v) {
-				Constant.touchTime = System.currentTimeMillis();
 				startActivity(new Intent(LoginPage.this, HomePage.class));
 				finish();
 			}
 		});
-		
-		findViewById(R.id.loginpage).setOnTouchListener(new WholeViewOnTouchListener(this));
 	}
 	
 }

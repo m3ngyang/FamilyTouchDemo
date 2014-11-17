@@ -213,6 +213,8 @@ public class HomePage extends Activity {
 		searchBtn.setOnClickListener(new SearchBtnOnClickListener(this));
 		ImageButton homeBtn = (ImageButton) findViewById(R.id.btn_home);
 		homeBtn.setOnClickListener(new HomeBtnOnClickListener(this));
+		ImageButton iconBtn = (ImageButton)findViewById(R.id.btn_appicon);
+		iconBtn.setOnClickListener(new HomeBtnOnClickListener(this));
 		
 		mNoticePage = NoticeCenter.getNoticeCenter(this);
 		

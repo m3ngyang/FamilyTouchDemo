@@ -36,7 +36,7 @@ public class NoticeCenter {
 		today.setContent(R.id.tabToday);
 		today.setIndicator("今天");
 		TabSpec notice = tabHost.newTabSpec("通知");
-		notice.setContent(R.id.NoticeList);
+		notice.setContent(R.id.noticeModule);
 		notice.setIndicator("通知");
 		
 		tabHost.addTab(today);

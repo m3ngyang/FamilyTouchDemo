@@ -25,6 +25,7 @@ public class ScreenSaverActivity extends Activity {
 	private ImageSwitcher imageSwitcher;
 	private int index = 0;
 
+	@SuppressWarnings("deprecation")
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

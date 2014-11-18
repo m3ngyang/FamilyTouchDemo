@@ -1,3 +1,6 @@
+/**
+ * @author Kaffa
+ */
 package com.familytouch.control;
 
 import java.util.ArrayList;

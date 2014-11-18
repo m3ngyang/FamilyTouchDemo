@@ -13,6 +13,7 @@ import android.widget.AdapterView.OnItemClickListener;
 
 import com.familytouch.R;
 import com.familytouch.data.Constant;
+import com.familytouch.ui.DevicePage;
 import com.familytouch.ui.GalleryActivity;
 import com.familytouch.ui.StaticPage;
 import com.familytouch.view.SquareMenu;
@@ -178,8 +179,9 @@ public class GridOnClickListener implements OnItemClickListener {
 			break;
 
 		case R.drawable.mobiledevice:// 移动设备
-			intent = new Intent(context, StaticPage.class);
-			intent.putExtra(Constant.STATICPAGEKEY, R.drawable.mobiledevicepage);
+//			intent = new Intent(context, StaticPage.class);
+//			intent.putExtra(Constant.STATICPAGEKEY, R.drawable.mobiledevicepage);
+			intent = new Intent(context, DevicePage.class);
 			context.startActivity(intent);
 			break;
 			

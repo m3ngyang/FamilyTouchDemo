@@ -12,7 +12,6 @@ import com.familytouch.R;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.graphics.drawable.Drawable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -40,7 +39,7 @@ public class NoticeItemAdapter extends SimpleAdapter {
 		this.list = (ArrayList<HashMap<String, Object>>) data;
 	}
 
-	@SuppressLint("ViewHolder")
+	@SuppressLint({ "ViewHolder", "InflateParams" })
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 		// TODO Auto-generated method stub

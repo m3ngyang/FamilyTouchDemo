@@ -1,6 +1,8 @@
 package com.familytouch.ui;
 
 import com.familytouch.R;
+import com.familytouch.R.id;
+import com.familytouch.R.layout;
 
 import android.app.Activity;
 import android.content.Intent;

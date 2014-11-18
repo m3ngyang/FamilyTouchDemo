@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
 
-import com.familytouch.ui.DevicePage;
 import com.familytouch.ui.HomePage;
 
 public class MainActivity extends Activity {

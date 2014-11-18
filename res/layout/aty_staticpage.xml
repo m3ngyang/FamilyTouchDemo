@@ -3,15 +3,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
-    
+
     <!-- 测试设备物理规格1024*600，除去状态栏及控制栏后屏幕实际像素为1024*527 -->
-    
-    <include layout="@layout/top_bar"/>
-    
-    <LinearLayout android:id="@+id/staticBackground"
+
+    <include layout="@layout/top_bar" />
+
+    <LinearLayout
+        android:id="@+id/staticBackground"
         android:layout_width="match_parent"
-    	android:layout_height="467dp" 
-    	android:orientation="horizontal" >
-	</LinearLayout>
+        android:layout_height="467dp"
+        android:orientation="horizontal" >
+    </LinearLayout>
 
 </LinearLayout>

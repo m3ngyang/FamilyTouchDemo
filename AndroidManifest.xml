@@ -23,6 +23,7 @@
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -53,16 +54,17 @@
             android:label="@string/title_activity_home_page2" >
         </activity>
         <activity
-            android:name="com.familytouch.ui.ScreenSaverActivity"
+            android:name=".ui.ScreenSaverActivity"
             android:label="@string/title_activity_screen_saver" >
-        </activity>
-        <activity
-            android:name="com.familytouch.ui.DevicePage" >
         </activity>
 
         <service android:name=".LauncherService" >
-            
         </service>
+
+        <activity
+            android:name="com.familytouch.ui.DevicePage"
+            android:label="@string/title_activity_device_page" >
+        </activity>
     </application>
 
 </manifest>

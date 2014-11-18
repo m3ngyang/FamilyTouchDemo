@@ -179,6 +179,8 @@ public class GridOnClickListener implements OnItemClickListener {
 			break;
 
 		case R.drawable.mobiledevice:// 移动设备
+//			intent = new Intent(context, StaticPage.class);
+//			intent.putExtra(Constant.STATICPAGEKEY, R.drawable.mobiledevicepage);
 			intent = new Intent(context, DevicePage.class);
 			context.startActivity(intent);
 			break;
@@ -186,6 +188,12 @@ public class GridOnClickListener implements OnItemClickListener {
 		case R.drawable.setting:// 设置
 			intent = new Intent(context, StaticPage.class);
 			intent.putExtra(Constant.STATICPAGEKEY, R.drawable.settingpage);
+			context.startActivity(intent);
+			break;
+			
+		case R.drawable.nearby:// around
+			intent = new Intent(context, StaticPage.class);
+			intent.putExtra(Constant.STATICPAGEKEY, R.drawable.aroundpage);
 			context.startActivity(intent);
 			break;
 

@@ -17,6 +17,7 @@ import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TabHost;
 import android.widget.TabHost.TabSpec;
+import android.widget.TextView;
 
 public class NoticeCenter {
 	private static View view;
@@ -32,12 +33,18 @@ public class NoticeCenter {
 		TabHost tabHost = (TabHost) view.findViewById(R.id.NoticeCenter);
 		tabHost.setup();
 
-		TabSpec today = tabHost.newTabSpec("今天");
+		
+		TabSpec today = tabHost.newTabSpec("today");
 		today.setContent(R.id.tabToday);
-		today.setIndicator("今天");
-		TabSpec notice = tabHost.newTabSpec("通知");
-		notice.setContent(R.id.NoticeList);
-		notice.setIndicator("通知");
+		View todayCell = (View)LayoutInflater.from(c).inflate(R.layout.tab_widget, null);
+		((TextView)todayCell.findViewById(R.id.tabLab)).setText("今天");
+		today.setIndicator(todayCell);
+		
+		TabSpec notice = tabHost.newTabSpec("notice");
+		notice.setContent(R.id.noticeModule);
+		View noticeCell = (View)LayoutInflater.from(c).inflate(R.layout.tab_widget, null);
+		((TextView)noticeCell.findViewById(R.id.tabLab)).setText("通知");
+		notice.setIndicator(noticeCell);
 		
 		tabHost.addTab(today);
 		tabHost.addTab(notice);

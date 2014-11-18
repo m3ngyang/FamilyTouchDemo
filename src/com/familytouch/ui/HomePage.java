@@ -37,7 +37,7 @@ public class HomePage extends Activity {
 
 	private final static String INSTANCESTATE = "curChoice";
 	private final static String BUNDLEINDEX = "bundleIndex";
-	private static View mMainPager,mNoticeView;
+	private static View mMainPage,mNoticePage,mAroundPage;
 
 	private static List<Map<String, Object>> titleList;
 
@@ -165,14 +165,18 @@ public class HomePage extends Activity {
 			// View curView;
 			switch (getShownIndex()) {
 			case 0:
-				curView = mMainPager;
+				curView = mMainPage;
 				return curView;
 
 			case 1:
 //				View noticeView = LayoutInflater.from(getActivity()).inflate(
 //						R.layout.layout_notice, null);
 //				curView = noticeView;
-				curView = mNoticeView;
+				curView = mNoticePage;
+				return curView;
+				
+			case 7:
+				curView = mAroundPage;
 				return curView;
 
 			default:
@@ -204,12 +208,16 @@ public class HomePage extends Activity {
 
 		// mMainPager = GridViewPager.getGridViewPager(getApplicationContext(),
 		// arrayList);
-		mMainPager = GridViewPager.getGridViewPager(HomePage.this, arrayList);
+		mMainPage = GridViewPager.getGridViewPager(HomePage.this, arrayList);
 		ImageButton searchBtn = (ImageButton) findViewById(R.id.btn_search);
 		searchBtn.setOnClickListener(new SearchBtnOnClickListener(this));
 		ImageButton homeBtn = (ImageButton) findViewById(R.id.btn_home);
 		homeBtn.setOnClickListener(new HomeBtnOnClickListener(this));
+		ImageButton iconBtn = (ImageButton)findViewById(R.id.btn_appicon);
+		iconBtn.setOnClickListener(new HomeBtnOnClickListener(this));
 		
-		mNoticeView = NoticeCenter.getNoticeCenter(this);
+		mNoticePage = NoticeCenter.getNoticeCenter(this);
+		
+		mAroundPage = LayoutInflater.from(this).inflate(R.layout.layout_aroundpage, null);
 	}
 }

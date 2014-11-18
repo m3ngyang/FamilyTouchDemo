@@ -21,9 +21,7 @@ public class LoginPage extends Activity{
 			@Override
 			public void onClick(View v) {
 				startActivity(new Intent(LoginPage.this, HomePage.class));
-				finish();
 			}
 		});
 	}
-	
 }

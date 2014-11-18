@@ -32,6 +32,9 @@ public class StaticPage extends Activity {
 		homeBtn.setOnClickListener(new HomeBtnOnClickListener(this));
 		ImageButton backBtn = (ImageButton)findViewById(R.id.btn_back);
 		backBtn.setOnClickListener(new BackOnClickLlistener(this));
+		
+		ImageButton iconBtn = (ImageButton)findViewById(R.id.btn_appicon);
+		iconBtn.setOnClickListener(new HomeBtnOnClickListener(this));
 	}
 	
 }

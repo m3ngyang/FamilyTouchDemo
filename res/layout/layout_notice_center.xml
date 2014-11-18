@@ -36,13 +36,26 @@
                     android:text="No events today" />
             </ScrollView>
 
-            <ListView
-                android:id="@+id/NoticeList"
+            <LinearLayout
+                android:id="@+id/noticeModule"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp" >
-            </ListView>
+                android:orientation="vertical">
+
+                <ListView
+                    android:id="@+id/NoticeList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp" >
+                </ListView>
+                
+                <ImageView 
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/notice_end"/>
+            </LinearLayout>
         </FrameLayout>
     </LinearLayout>
 
